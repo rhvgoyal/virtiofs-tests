@@ -1,0 +1,11 @@
+[global]
+name=fio-mmap
+filename=fio-mmap-file
+rw=randread
+direct=0
+numjobs=1
+runtime=60
+iodepth=16
+size=4G
+
+[randread]

@@ -1,0 +1,10 @@
+[global]
+name=fio-mmap
+filename=fio-mmap-file
+rw=write
+direct=0
+numjobs=1
+size=4G
+iodepth=16
+
+[seqwrite]

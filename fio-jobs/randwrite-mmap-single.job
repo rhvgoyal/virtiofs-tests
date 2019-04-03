@@ -1,0 +1,14 @@
+[global]
+name=fio-mmap
+rw=randwrite
+direct=0
+numjobs=1
+bs=4K
+fsync_on_close=1
+size=4G
+ioengine=mmap
+runtime=60
+group_reporting=1
+
+[randwrite-mmap-single]
+filename=fio-mmap-file
