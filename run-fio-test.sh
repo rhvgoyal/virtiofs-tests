@@ -38,7 +38,7 @@ if [ ! -d "$TESTDIR" ];then
   echo "$TESTDIR is not a valid directory."
   usage $0
   exit 1
-fTEST_i
+fi
 
 shift 2
 JOB_FILES="$@"
