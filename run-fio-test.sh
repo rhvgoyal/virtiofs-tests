@@ -18,7 +18,6 @@ usage() {
 }
 
 # Main script
-drop_cache
 
 #shift
 JOB_FILES="$@"
@@ -50,6 +49,7 @@ if [ -z "$JOB_FILES" ];then
   exit 1
 fi
 
+drop_cache
 echo "TEST_NAME=$TEST_NAME"
 for jobname in $JOB_FILES;do
   for i in `seq 1 $NR_RUN`;do
