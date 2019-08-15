@@ -15,13 +15,15 @@ get_total() {
 get_avg() {
   local data="$1"
   local avg i total
+  local nr_samples="0"
 
   for i in $data;do
     i=`printf "%.0f" "$i"`
     total=$(( total + i ))
+    nr_samples=$((nr_samples + 1))
   done 
 
-  avg=$((total/3))
+  avg=$((total/nr_samples))
   echo $avg
 }
 
@@ -66,12 +68,17 @@ parse_print_ops() {
       [ -z "$TEST_NAME" ] && TEST_NAME="unknown"
       UNIT="KiB/s"
       NUMS=`get_op_data $op $file $write`
-      AVG=`get_avg "$NUMS"`
-      if [ $AVG -gt 10240 ]; then
-        AVG=`kib_to_mib $AVG`
-        UNIT="MiB/s"
+      if [ -z "$NUMS" ];then
+        AVG="Unknown"
+        printf "%-24s%-24s%s(%s)\n" "$TEST_NAME" "$op" "$AVG" "$UNIT"
+      else
+        AVG=`get_avg "$NUMS"`
+        if [ $AVG -gt 10240 ]; then
+          AVG=`kib_to_mib $AVG`
+          UNIT="MiB/s"
+        fi
+        printf "%-24s%-24s%d(%s)\n" "$TEST_NAME" "$op" "$AVG" "$UNIT"
       fi
-      printf "%-24s%-24s%d(%s)\n" "$TEST_NAME" "$op" "$AVG" "$UNIT"
     done
     printf "\n"
   done

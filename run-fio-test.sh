@@ -3,7 +3,8 @@
 # Defaults
 # default runtime is 30 seconds
 RUNTIME=30
-NR_RUN=3
+# Number of times each job is run
+LOOPS=3
 
 drop_cache() {
   sync
@@ -44,6 +45,7 @@ Run fio tests
 Options:
   -h | --help		Print help message
   --runtime		Time in seconds for which each job should run. Default                          is 30 seconds.
+  --loops		Number of times each job is run. Default is 3.
 FOE
 }
 
@@ -58,12 +60,13 @@ if [ $# -lt 3 ];then
 fi
 
 # Parse options
-OPTS=`getopt -o h -l help -l runtime: -- $@`
+OPTS=`getopt -o h -l help -l runtime: -l loops: -- $@`
 eval set -- "$OPTS"
 while true; do
   case "$1" in
     -h | --help)  usage $(basename $0); exit 0;;
     --runtime) RUNTIME=$2; shift 2;;
+    --loops) LOOPS=$2; shift 2;;
     --) shift; break;;
     esac
 done
@@ -92,7 +95,7 @@ fi
 output_meta_info
 drop_cache
 for jobname in $JOB_FILES;do
-  for i in `seq 1 $NR_RUN`;do
+  for i in `seq 1 $LOOPS`;do
      run_test $jobname
   done
 done
