@@ -7,7 +7,6 @@ bs=4K
 fsync_on_close=1
 size=4G
 ioengine=mmap
-runtime=60
 group_reporting=1
 
 [randwrite-mmap-multi]

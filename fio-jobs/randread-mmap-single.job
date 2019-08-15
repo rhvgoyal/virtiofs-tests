@@ -6,7 +6,6 @@ numjobs=1
 bs=4K
 ioengine=mmap
 size=4G
-runtime=60
 group_reporting=1
 
 [randread-mmap-single]

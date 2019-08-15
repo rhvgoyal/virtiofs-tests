@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Defaults
+# default runtime is 30 seconds
+RUNTIME=30
 NR_RUN=3
 
 drop_cache() {
@@ -27,12 +30,21 @@ output_meta_info() {
 
 run_test() {
   drop_cache
-  fio --directory=$TESTDIR --append-terse $1
+  fio --directory=$TESTDIR --runtime=$RUNTIME --append-terse $1
 }
 
 usage() {
   cmd=$1
-  echo "$cmd: <name> <test-directory> <fio-job> ...."
+
+  cat <<-FOE
+Usage: $cmd: [OPTIONS] <name> <test-directory> <fio-job> ....
+
+Run fio tests
+
+Options:
+  -h | --help		Print help message
+  --runtime		Time in seconds for which each job should run. Default                          is 30 seconds.
+FOE
 }
 
 # Main script
@@ -41,9 +53,20 @@ usage() {
 JOB_FILES="$@"
 
 if [ $# -lt 3 ];then
-  usage $0
+  usage $(basename $0)
   exit 1
 fi
+
+# Parse options
+OPTS=`getopt -o h -l help -l runtime: -- $@`
+eval set -- "$OPTS"
+while true; do
+  case "$1" in
+    -h | --help)  usage $(basename $0); exit 0;;
+    --runtime) RUNTIME=$2; shift 2;;
+    --) shift; break;;
+    esac
+done
 
 # Give a short name, for ex. virtiofs-cache-dax. This signifies tests being
 # run on virtio-fs with cache=always and dax is enabled. This will be saved
