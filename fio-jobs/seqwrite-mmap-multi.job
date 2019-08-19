@@ -2,11 +2,9 @@
 name=fio-mmap
 filename=fio-mmap-file
 rw=write
-direct=0
 bs=4K
 fsync_on_close=1
 ioengine=mmap
-size=4G
 group_reporting=1
 
 [seqwrite-mmap-multi]

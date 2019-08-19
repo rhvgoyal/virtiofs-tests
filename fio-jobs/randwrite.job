@@ -2,8 +2,6 @@
 name=fio-mmap
 filename=fio-mmap-file
 rw=randwrite
-direct=0
 numjobs=1
-size=4G
 
 [randwrite]

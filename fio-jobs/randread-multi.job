@@ -1,8 +1,6 @@
 [global]
 name=fio-mmap
 rw=randread
-direct=0
-size=4G
 group_reporting=1
 
 [randread-multi]

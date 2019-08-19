@@ -6,6 +6,8 @@ RUNTIME=30
 # Number of times each job is run
 LOOPS=3
 IODEPTH=16
+SIZE="4G"
+DIRECT=0
 
 drop_cache() {
   sync
@@ -32,7 +34,7 @@ output_meta_info() {
 
 run_test() {
   drop_cache
-  fio --directory=$TESTDIR --runtime=$RUNTIME --iodepth=$IODEPTH --append-terse $1
+  fio --directory=$TESTDIR --runtime=$RUNTIME --iodepth=$IODEPTH --size="$SIZE" --direct=$DIRECT --append-terse $1
 }
 
 usage() {
@@ -48,6 +50,8 @@ Options:
   --runtime		Time in seconds for which each job should run. Default                          is 30 seconds.
   --loops		Number of times each job is run. Default is 3.
   --iodepth		Number of I/O units to keep in flight. Default is 16.
+  --size		Total size of file. Default is 4G.
+  --direct		If set to 1, use non-buffered I/O. Default is 0.
 FOE
 }
 
@@ -62,7 +66,7 @@ if [ $# -lt 3 ];then
 fi
 
 # Parse options
-OPTS=`getopt -o h -l help -l runtime: -l loops: -l iodepth: -- $@`
+OPTS=`getopt -o h -l help -l runtime: -l loops: -l iodepth: -l size: -l direct: -- $@`
 eval set -- "$OPTS"
 while true; do
   case "$1" in
@@ -70,6 +74,8 @@ while true; do
     --runtime) RUNTIME=$2; shift 2;;
     --loops) LOOPS=$2; shift 2;;
     --iodepth) IODEPTH=$2; shift 2;;
+    --size) SIZE=$2; shift 2;;
+    --direct) DIRECT=$2; shift 2;;
     --) shift; break;;
     esac
 done
