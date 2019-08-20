@@ -1,0 +1,17 @@
+[global]
+name=fio-job
+rw=read
+ioengine=psync
+group_reporting=1
+
+[seqread-psync-multi]
+filename=fio-file1
+
+[seqread-psync-multi]
+filename=fio-file2
+
+[seqread-psync-multi]
+filename=fio-file3
+
+[seqread-psync-multi]
+filename=fio-file4
