@@ -1,0 +1,9 @@
+[global]
+name=fio-job
+filename=fio-file1
+rw=randwrite
+fsync=128
+ioengine=libaio
+direct=1
+
+[randwrite-libaio]
