@@ -4,5 +4,5 @@ rw=randwrite
 fsync_on_close=1
 ioengine=mmap
 
-[randwrite-mmap-single]
+[randwrite-mmap]
 filename=fio-file1

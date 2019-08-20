@@ -5,5 +5,5 @@ rw=write
 fsync_on_close=1
 ioengine=mmap
 
-[seqwrite-mmap-single]
+[seqwrite-mmap]
 filename=fio-file1

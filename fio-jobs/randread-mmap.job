@@ -1,7 +1,7 @@
 [global]
 name=fio-mmap
-rw=read
+rw=randread
 ioengine=mmap
 
-[seqread-mmap-single]
+[randread-mmap]
 filename=fio-file1

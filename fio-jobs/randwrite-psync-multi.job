@@ -3,14 +3,14 @@ name=fio-mmap
 rw=randwrite
 group_reporting=1
 
-[randwrite-multi]
+[randwrite-psync-multi]
 filename=fio-file1
 
-[randwrite-multi]
+[randwrite-psync-multi]
 filename=fio-file2
 
-[randwrite-multi]
+[randwrite-psync-multi]
 filename=fio-file3
 
-[randwrite-multi]
+[randwrite-psync-multi]
 filename=fio-file4

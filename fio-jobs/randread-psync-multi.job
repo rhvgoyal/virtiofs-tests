@@ -3,14 +3,14 @@ name=fio-mmap
 rw=randread
 group_reporting=1
 
-[randread-multi]
+[randread-psync-multi]
 filename=fio-file1
 
-[randread-multi]
+[randread-psync-multi]
 filename=fio-file2
 
-[randread-multi]
+[randread-psync-multi]
 filename=fio-file3
 
-[randread-multi]
+[randread-psync-multi]
 filename=fio-file4

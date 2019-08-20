@@ -1,6 +1,6 @@
 [global]
 name=fio-mmap
 filename=fio-file1
-rw=randread
+rw=write
 
-[randread]
+[seqwrite-psync]

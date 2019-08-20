@@ -3,4 +3,4 @@ name=fio-mmap
 filename=fio-file1
 rw=randwrite
 
-[randwrite]
+[randwrite-psync]

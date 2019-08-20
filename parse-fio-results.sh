@@ -91,9 +91,9 @@ if [ $# -lt 1 ];then
 fi
 
 FILES="$@"
-READ_OPERATIONS="seqread seqread-mmap-single seqread-mmap-multi randread randread-multi randread-mmap-single randread-mmap-multi"
+READ_OPERATIONS="seqread-psync seqread-mmap seqread-mmap-multi randread-psync randread-psync-multi randread-mmap randread-mmap-multi"
 
-WRITE_OPERATIONS="seqwrite seqwrite-mmap-single seqwrite-mmap-multi randwrite randwrite-multi randwrite-mmap-single randwrite-mmap-multi"
+WRITE_OPERATIONS="seqwrite-psync seqwrite-mmap seqwrite-mmap-multi randwrite-psync randwrite-psync-multi randwrite-mmap randwrite-mmap-multi"
 
 # Parse and print numbers
 print_result_header
