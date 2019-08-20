@@ -2,5 +2,6 @@
 name=fio-mmap
 filename=fio-file1
 rw=write
+fsync=128
 
 [seqwrite-psync]

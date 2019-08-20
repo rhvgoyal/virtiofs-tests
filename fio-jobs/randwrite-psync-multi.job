@@ -2,6 +2,7 @@
 name=fio-mmap
 rw=randwrite
 group_reporting=1
+fsync=128
 
 [randwrite-psync-multi]
 filename=fio-file1

@@ -1,9 +1,9 @@
 [global]
 name=fio-mmap
 rw=randwrite
-fsync_on_close=1
 ioengine=mmap
 group_reporting=1
+fsync=128
 
 [randwrite-mmap-multi]
 filename=fio-file1
