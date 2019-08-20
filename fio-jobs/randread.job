@@ -1,6 +1,6 @@
 [global]
 name=fio-mmap
-filename=fio-mmap-file
+filename=fio-file1
 rw=randread
 
 [randread]

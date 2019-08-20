@@ -5,13 +5,13 @@ ioengine=mmap
 group_reporting=1
 
 [seqread-mmap-multi]
-filename=fio-mmap-file
+filename=fio-file1
 
 [seqread-mmap-multi]
-filename=fio-mmap-file2
+filename=fio-file2
 
 [seqread-mmap-multi]
-filename=fio-mmap-file3
+filename=fio-file3
 
 [seqread-mmap-multi]
-filename=fio-mmap-file4
+filename=fio-file4

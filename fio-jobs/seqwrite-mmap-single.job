@@ -1,9 +1,9 @@
 [global]
 name=fio-mmap
-filename=fio-mmap-file
+filename=fio-file1
 rw=write
 fsync_on_close=1
 ioengine=mmap
 
 [seqwrite-mmap-single]
-filename=fio-mmap-file
+filename=fio-file1

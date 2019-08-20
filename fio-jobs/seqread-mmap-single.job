@@ -4,4 +4,4 @@ rw=read
 ioengine=mmap
 
 [seqread-mmap-single]
-filename=fio-mmap-file
+filename=fio-file1

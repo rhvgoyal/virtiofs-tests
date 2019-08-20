@@ -1,19 +1,18 @@
 [global]
 name=fio-mmap
-filename=fio-mmap-file
 rw=write
 fsync_on_close=1
 ioengine=mmap
 group_reporting=1
 
 [seqwrite-mmap-multi]
-filename=fio-mmap-file
+filename=fio-file1
 
 [seqwrite-mmap-multi]
-filename=fio-mmap-file2
+filename=fio-file2
 
 [seqwrite-mmap-multi]
-filename=fio-mmap-file3
+filename=fio-file3
 
 [seqwrite-mmap-multi]
-filename=fio-mmap-file4
+filename=fio-file4

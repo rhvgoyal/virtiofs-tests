@@ -4,4 +4,4 @@ rw=randread
 ioengine=mmap
 
 [randread-mmap-single]
-filename=fio-mmap-file
+filename=fio-file1
