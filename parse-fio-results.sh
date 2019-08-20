@@ -93,7 +93,7 @@ fi
 FILES="$@"
 READ_OPERATIONS="seqread-psync seqread-psync-multi seqread-mmap seqread-mmap-multi randread-psync randread-psync-multi randread-mmap randread-mmap-multi"
 
-WRITE_OPERATIONS="seqwrite-psync seqwrite-mmap seqwrite-mmap-multi randwrite-psync randwrite-psync-multi randwrite-mmap randwrite-mmap-multi"
+WRITE_OPERATIONS="seqwrite-psync seqwrite-psync-multi seqwrite-mmap seqwrite-mmap-multi randwrite-psync randwrite-psync-multi randwrite-mmap randwrite-mmap-multi"
 
 # Parse and print numbers
 print_result_header
