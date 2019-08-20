@@ -3,7 +3,6 @@ name=fio-mmap
 rw=read
 bs=4K
 ioengine=mmap
-group_reporting=1
 
 [seqread-mmap-single]
 filename=fio-mmap-file

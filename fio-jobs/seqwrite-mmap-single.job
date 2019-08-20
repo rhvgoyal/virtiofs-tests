@@ -5,7 +5,6 @@ rw=write
 bs=4K
 fsync_on_close=1
 ioengine=mmap
-group_reporting=1
 
 [seqwrite-mmap-single]
 filename=fio-mmap-file
