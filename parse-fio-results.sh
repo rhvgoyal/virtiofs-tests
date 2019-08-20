@@ -91,7 +91,7 @@ if [ $# -lt 1 ];then
 fi
 
 FILES="$@"
-READ_OPERATIONS="seqread-psync seqread-mmap seqread-mmap-multi randread-psync randread-psync-multi randread-mmap randread-mmap-multi"
+READ_OPERATIONS="seqread-psync seqread-psync-multi seqread-mmap seqread-mmap-multi randread-psync randread-psync-multi randread-mmap randread-mmap-multi"
 
 WRITE_OPERATIONS="seqwrite-psync seqwrite-mmap seqwrite-mmap-multi randwrite-psync randwrite-psync-multi randwrite-mmap randwrite-mmap-multi"
 
