@@ -1,7 +1,6 @@
 [global]
 name=fio-mmap
 rw=randread
-bs=4K
 ioengine=mmap
 
 [randread-mmap-single]

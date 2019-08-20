@@ -1,7 +1,6 @@
 [global]
 name=fio-mmap
 rw=randwrite
-bs=4K
 fsync_on_close=1
 ioengine=mmap
 

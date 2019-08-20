@@ -1,7 +1,6 @@
 [global]
 name=fio-mmap
 rw=read
-bs=4K
 ioengine=mmap
 
 [seqread-mmap-single]

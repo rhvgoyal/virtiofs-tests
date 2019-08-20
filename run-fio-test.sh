@@ -8,6 +8,7 @@ LOOPS=3
 IODEPTH=16
 SIZE="4G"
 DIRECT=0
+BLOCKSIZE="4K"
 
 drop_cache() {
   sync
@@ -29,13 +30,13 @@ output_meta_info() {
   echo "SYSTEMINFO=`uname -a`"
   echo "MOUNTPOINT=`findmnt -n --target $TESTDIR`"
   echo "VIRTO_SHM_REGIONS=`get_shm_regions`"
-  echo "RUNTIME=$RUNTIME LOOPS=$LOOPS IODEPTH=$IODEPTH SIZE=$SIZE DIRECT=$DIRECT"
+  echo "RUNTIME=$RUNTIME LOOPS=$LOOPS IODEPTH=$IODEPTH SIZE=$SIZE DIRECT=$DIRECT BLOCKSIZE=$BLOCKSIZE"
   echo ""
 }
 
 run_test() {
   drop_cache
-  fio --directory=$TESTDIR --runtime=$RUNTIME --iodepth=$IODEPTH --size="$SIZE" --direct=$DIRECT --append-terse $1
+  fio --directory=$TESTDIR --runtime=$RUNTIME --iodepth=$IODEPTH --size="$SIZE" --direct=$DIRECT --blocksize="$BLOCKSIZE" --append-terse $1
 }
 
 usage() {
@@ -53,6 +54,7 @@ Options:
   --iodepth		Number of I/O units to keep in flight. Default is 16.
   --size		Total size of file. Default is 4G.
   --direct		If set to 1, use non-buffered I/O. Default is 0.
+  --blocksize		Specify blocksize. Default is 4K.
 FOE
 }
 
@@ -67,7 +69,7 @@ if [ $# -lt 3 ];then
 fi
 
 # Parse options
-OPTS=`getopt -o h -l help -l runtime: -l loops: -l iodepth: -l size: -l direct: -- $@`
+OPTS=`getopt -o h -l help -l runtime: -l loops: -l iodepth: -l size: -l direct: -l blocksize: -- $@`
 eval set -- "$OPTS"
 while true; do
   case "$1" in
@@ -77,6 +79,7 @@ while true; do
     --iodepth) IODEPTH=$2; shift 2;;
     --size) SIZE=$2; shift 2;;
     --direct) DIRECT=$2; shift 2;;
+    --blocksize) BLOCKSIZE=$2; shift 2;;
     --) shift; break;;
     esac
 done
