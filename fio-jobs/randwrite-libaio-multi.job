@@ -2,7 +2,7 @@
 name=fio-job
 rw=randwrite
 group_reporting=1
-fsync=128
+fsync=1024
 ioengine=libaio
 direct=1
 

@@ -2,7 +2,7 @@
 name=fio-job
 filename=fio-file1
 rw=write
-fsync=128
+fsync=1024
 ioengine=libaio
 direct=1
 

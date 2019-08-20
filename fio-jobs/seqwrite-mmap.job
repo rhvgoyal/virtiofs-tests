@@ -3,7 +3,7 @@ name=fio-mmap
 filename=fio-file1
 rw=write
 ioengine=mmap
-fsync=128
+fsync=1024
 
 [seqwrite-mmap]
 filename=fio-file1
