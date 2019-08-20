@@ -2,6 +2,5 @@
 name=fio-mmap
 filename=fio-mmap-file
 rw=read
-numjobs=1
 
 [seqread]

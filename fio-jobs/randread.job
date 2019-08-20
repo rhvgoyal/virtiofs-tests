@@ -2,6 +2,5 @@
 name=fio-mmap
 filename=fio-mmap-file
 rw=randread
-numjobs=1
 
 [randread]

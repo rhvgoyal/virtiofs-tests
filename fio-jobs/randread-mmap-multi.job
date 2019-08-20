@@ -1,7 +1,6 @@
 [global]
 name=fio-mmap
 rw=randread
-numjobs=1
 bs=4K
 ioengine=mmap
 group_reporting=1
