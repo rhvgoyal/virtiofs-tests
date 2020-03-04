@@ -4,7 +4,7 @@ rw=write
 ioengine=libaio
 direct=1
 group_reporting=1
-fsync=1024
+fsync=32768
 
 [seqwrite-libaio-multi]
 filename=fio-file1

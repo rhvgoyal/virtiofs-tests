@@ -3,7 +3,7 @@ name=fio-mmap
 rw=randwrite
 ioengine=mmap
 group_reporting=1
-fsync=1024
+fsync=32768
 
 [randwrite-mmap-multi]
 filename=fio-file1

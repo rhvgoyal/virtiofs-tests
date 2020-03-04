@@ -3,7 +3,7 @@ name=fio-job
 rw=write
 ioengine=psync
 group_reporting=1
-fsync=1024
+fsync=32768
 
 [seqwrite-psync-multi]
 filename=fio-file1

@@ -2,6 +2,6 @@
 name=fio-mmap
 filename=fio-file1
 rw=randwrite
-fsync=1024
+fsync=32768
 
 [randwrite-psync]
