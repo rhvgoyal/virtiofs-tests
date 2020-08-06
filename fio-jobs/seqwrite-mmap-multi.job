@@ -3,7 +3,6 @@ name=fio-mmap
 rw=write
 ioengine=mmap
 group_reporting=1
-fsync=32768
 
 [seqwrite-mmap-multi]
 filename=fio-file1

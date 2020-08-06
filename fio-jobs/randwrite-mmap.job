@@ -2,7 +2,6 @@
 name=fio-mmap
 rw=randwrite
 ioengine=mmap
-fsync=32768
 
 [randwrite-mmap]
 filename=fio-file1
