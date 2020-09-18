@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Job Name, Workload, Bandwidth, IOPS
+PRINT_FORMAT="%-24s%-24s%-16s%-16s\n"
+
 get_total() {
   local data="$1"
   local i total
@@ -27,7 +30,7 @@ get_avg() {
   echo $avg
 }
 
-kib_to_mib() {
+div_by_kib() {
   local data=$1
   local total
 
@@ -35,7 +38,7 @@ kib_to_mib() {
   echo $total
 }
 
-get_op_data() {
+get_op_bw() {
   local op=$1
   local file=$2
   local write=$3
@@ -50,35 +53,84 @@ get_op_data() {
   echo $data 
 }
 
+get_op_iops() {
+  local op=$1
+  local file=$2
+  local write=$3
+  local data
+
+  if [ "$write" == "1" ];then
+    data=`grep -e ";$op;" $file | awk -F\; '{print $49}'`
+  else
+    data=`grep -e ";$op;" $file | awk -F\; '{print $8}'`
+  fi
+
+  echo $data
+}
+
+get_op_bw_formatted() {
+      local op=$1 file=$2 write=$3
+      local unit data avg bw
+
+      unit="KiB/s"
+      data=`get_op_bw $op $file $write`
+
+      if [ -z "$data" ];then
+        avg="Unknown"
+      else
+        avg=`get_avg "$data"`
+        if [ $avg -gt 10240 ]; then
+          avg=`div_by_kib $avg`
+          unit="MiB/s"
+        fi
+      fi
+
+      bw="$avg($unit)"
+      echo "$bw"
+}
+
+get_op_iops_formatted() {
+      local op=$1 file=$2 write=$3
+      local unit data avg iops
+
+      unit=""
+      data=`get_op_iops $op $file $write`
+      if [ -z "$data" ];then
+        avg="Unknown"
+      else
+        avg=`get_avg "$data"`
+        if [ $avg -gt 10240 ]; then
+          avg=`div_by_kib $avg`
+          unit="k"
+        fi
+      fi
+
+      iops="$avg$unit"
+      echo "$iops"
+}
+
 print_result_header() {
   local name="NAME"
-  local op="I/O Operation"
-  local bw="BW(Read/Write)"
+  local op="WORKLOAD"
+  local bw="Bandwidth"
+  local iops="IOPS"
 
-  printf "%-24s%-24s%s\n" "$name" "$op" "$bw"
+  printf $PRINT_FORMAT "$name" "$op" "$bw" "$iops"
 }
 
 parse_print_ops() {
   local operations=$1
   local write=$2
+  local bw iops
 
   for op in $operations;do
     for file in $FILES;do
       TEST_NAME=`grep "^TEST_NAME=" $file | cut -d "=" -f2`
       [ -z "$TEST_NAME" ] && TEST_NAME="unknown"
-      UNIT="KiB/s"
-      NUMS=`get_op_data $op $file $write`
-      if [ -z "$NUMS" ];then
-        AVG="Unknown"
-        printf "%-24s%-24s%s(%s)\n" "$TEST_NAME" "$op" "$AVG" "$UNIT"
-      else
-        AVG=`get_avg "$NUMS"`
-        if [ $AVG -gt 10240 ]; then
-          AVG=`kib_to_mib $AVG`
-          UNIT="MiB/s"
-        fi
-        printf "%-24s%-24s%d(%s)\n" "$TEST_NAME" "$op" "$AVG" "$UNIT"
-      fi
+      bw=`get_op_bw_formatted $op $file $write`
+      iops=`get_op_iops_formatted $op $file $write`
+
+      printf "$PRINT_FORMAT" "$TEST_NAME" "$op" "$bw" "$iops"
     done
     printf "\n"
   done
