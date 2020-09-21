@@ -121,18 +121,23 @@ print_result_header() {
 parse_print_ops() {
   local operations=$1
   local write=$2
-  local bw iops
+  local bw iops found_valid_value
 
   for op in $operations;do
+    found_valid_value="No"
     for file in $FILES;do
       TEST_NAME=`grep "^TEST_NAME=" $file | cut -d "=" -f2`
       [ -z "$TEST_NAME" ] && TEST_NAME="unknown"
       bw=`get_op_bw_formatted $op $file $write`
       iops=`get_op_iops_formatted $op $file $write`
 
+      [ "$bw" == "Unknown" ] && continue
+      [ "$bw" == "0(KiB/s)" ] && [ "$iops" == "0" ] && continue
+
+      found_valid_value="yes"
       printf "$PRINT_FORMAT" "$TEST_NAME" "$op" "$bw" "$iops"
     done
-    printf "\n"
+    [ "$found_valid_value" == "yes" ] && printf "\n"
   done
 }
 
