@@ -1,0 +1,8 @@
+[global]
+name=fio-mmap
+rw=randrw
+rwmixread=75
+ioengine=mmap
+
+[randrw-mmap]
+filename=fio-file1
