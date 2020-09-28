@@ -1,0 +1,17 @@
+[global]
+name=fio-mmap
+rw=randrw
+rwmixread=75
+group_reporting=1
+
+[randrw-psync-multi]
+filename=fio-file1
+
+[randrw-psync-multi]
+filename=fio-file2
+
+[randrw-psync-multi]
+filename=fio-file3
+
+[randrw-psync-multi]
+filename=fio-file4
