@@ -72,7 +72,7 @@ get_op_bw_formatted() {
       local op=$1 file=$2 write=$3
       local unit data avg bw
 
-      unit="KiB/s"
+      unit="kb"
       data=`get_op_bw $op $file $write`
 
       if [ -z "$data" ];then
@@ -82,9 +82,9 @@ get_op_bw_formatted() {
         avg=`get_avg "$data"`
         if [ $avg -gt 10240 ]; then
           avg=`div_by_kib $avg`
-          unit="MiB/s"
+          unit="mb"
         fi
-        bw="$avg($unit)"
+        bw="$avg$unit"
       fi
 
       echo "$bw"
@@ -133,7 +133,7 @@ parse_print_ops() {
       iops=`get_op_iops_formatted $op $file $write`
 
       [ "$bw" == "Unknown" ] && continue
-      [ "$bw" == "0(KiB/s)" ] && [ "$iops" == "0" ] && continue
+      [ "$bw" == "0kb" ] && [ "$iops" == "0" ] && continue
 
       found_valid_value="yes"
       printf "$PRINT_FORMAT" "$TEST_NAME" "$op" "$bw" "$iops"
