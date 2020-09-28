@@ -77,15 +77,16 @@ get_op_bw_formatted() {
 
       if [ -z "$data" ];then
         avg="Unknown"
+        bw="$avg"
       else
         avg=`get_avg "$data"`
         if [ $avg -gt 10240 ]; then
           avg=`div_by_kib $avg`
           unit="MiB/s"
         fi
+        bw="$avg($unit)"
       fi
 
-      bw="$avg($unit)"
       echo "$bw"
 }
 
