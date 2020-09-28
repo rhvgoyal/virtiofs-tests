@@ -133,7 +133,6 @@ parse_print_ops() {
       iops=`get_op_iops_formatted $op $file $write`
 
       [ "$bw" == "Unknown" ] && continue
-      [ "$bw" == "0kb" ] && [ "$iops" == "0" ] && continue
 
       found_valid_value="yes"
       printf "$PRINT_FORMAT" "$TEST_NAME" "$op" "$bw" "$iops"
