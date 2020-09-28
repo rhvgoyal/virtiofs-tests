@@ -68,29 +68,50 @@ get_op_iops() {
   echo $data
 }
 
-get_op_bw_formatted() {
-      local op=$1 file=$2 write=$3
-      local unit data avg bw
+get_op_bw_with_suffix() {
+  local op=$1 file=$2 write=$3
+  local unit data avg bw
 
-      unit="kb"
-      data=`get_op_bw $op $file $write`
+  unit="kb"
+  data=`get_op_bw $op $file $write`
 
-      if [ -z "$data" ];then
-        avg="Unknown"
-        bw="$avg"
-      else
-        avg=`get_avg "$data"`
-        if [ $avg -gt 10240 ]; then
-          avg=`div_by_kib $avg`
-          unit="mb"
-        fi
-        bw="$avg$unit"
-      fi
-
-      echo "$bw"
+  if [ -z "$data" ];then
+    avg="Unknown"
+    bw="$avg"
+  else
+    avg=`get_avg "$data"`
+    if [ $avg -gt 10240 ]; then
+      avg=`div_by_kib $avg`
+      unit="mb"
+    fi
+      bw="$avg$unit"
+  fi
+  echo "$bw"
 }
 
-get_op_iops_formatted() {
+get_op_bw_formatted() {
+  local op=$1 file=$2 write=$3 mixed=$4
+  local unit data avg bw
+  local rbw wbw
+
+  if [ "$mixed" == "1" ] || [ "$write" != "1" ]; then
+    rbw=`get_op_bw_with_suffix $op $file 0`
+  fi
+
+  if [ "$mixed" == "1" ] || [ "$write" == "1" ]; then
+    wbw=`get_op_bw_with_suffix $op $file 1`
+  fi
+
+  if [ "$mixed" == "1" ]; then
+    echo "$rbw/$wbw"
+  elif [ -n "$rbw" ]; then
+    echo "$rbw"
+  else
+    echo "$wbw"
+  fi
+}
+
+get_op_iops_with_suffix() {
       local op=$1 file=$2 write=$3
       local unit data avg iops
 
@@ -110,6 +131,28 @@ get_op_iops_formatted() {
       echo "$iops"
 }
 
+get_op_iops_formatted() {
+  local op=$1 file=$2 write=$3 mixed=$4
+  local unit data avg bw
+  local riops wiops
+
+  if [ "$mixed" == "1" ] || [ "$write" != "1" ]; then
+    riops=`get_op_iops_with_suffix $op $file 0`
+  fi
+
+  if [ "$mixed" == "1" ] || [ "$write" == "1" ]; then
+    wiops=`get_op_iops_with_suffix $op $file 1`
+  fi
+
+  if [ "$mixed" == "1" ]; then
+    echo "$riops/$wiops"
+  elif [ -n "$riops" ]; then
+    echo "$riops"
+  else
+    echo "$wiops"
+  fi
+}
+
 print_result_header() {
   local name="NAME"
   local op="WORKLOAD"
@@ -121,7 +164,7 @@ print_result_header() {
 
 parse_print_ops() {
   local operations=$1
-  local write=$2
+  local write=$2 mixed=$3
   local bw iops found_valid_value
 
   for op in $operations;do
@@ -129,10 +172,10 @@ parse_print_ops() {
     for file in $FILES;do
       TEST_NAME=`grep "^TEST_NAME=" $file | cut -d "=" -f2`
       [ -z "$TEST_NAME" ] && TEST_NAME="unknown"
-      bw=`get_op_bw_formatted $op $file $write`
-      iops=`get_op_iops_formatted $op $file $write`
+      bw=`get_op_bw_formatted $op $file $write $mixed`
+      iops=`get_op_iops_formatted $op $file $write $mixed`
 
-      [ "$bw" == "Unknown" ] && continue
+      [ "$bw" == "Unknown" ] || [ "$bw" == "Unknown/Unknown" ] && continue
 
       found_valid_value="yes"
       printf "$PRINT_FORMAT" "$TEST_NAME" "$op" "$bw" "$iops"
@@ -148,11 +191,14 @@ if [ $# -lt 1 ];then
 fi
 
 FILES="$@"
-READ_OPERATIONS="seqread-psync seqread-psync-multi seqread-mmap seqread-mmap-multi seqread-libaio seqread-libaio-multi randread-psync randread-psync-multi randread-mmap randread-mmap-multi randread-libaio randread-libaio-multi randrw-psync randrw-psync-multi randrw-libaio randrw-libaio-multi randrw-mmap randrw-mmap-multi"
+READ_OPERATIONS="seqread-psync seqread-psync-multi seqread-mmap seqread-mmap-multi seqread-libaio seqread-libaio-multi randread-psync randread-psync-multi randread-mmap randread-mmap-multi randread-libaio randread-libaio-multi"
 
 WRITE_OPERATIONS="seqwrite-psync seqwrite-psync-multi seqwrite-mmap seqwrite-mmap-multi seqwrite-libaio seqwrite-libaio-multi randwrite-psync randwrite-psync-multi randwrite-mmap randwrite-mmap-multi randwrite-libaio randwrite-libaio-multi"
+
+RW_OPERATIONS="randrw-psync randrw-psync-multi randrw-mmap randrw-mmap-multi randrw-libaio randrw-libaio-multi"
 
 # Parse and print numbers
 print_result_header
 parse_print_ops "$READ_OPERATIONS"
 parse_print_ops "$WRITE_OPERATIONS" "1"
+parse_print_ops "$RW_OPERATIONS" "0" "1"
