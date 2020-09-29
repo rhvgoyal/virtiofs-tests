@@ -15,6 +15,10 @@ drop_cache() {
   echo 3 > /proc/sys/vm/drop_caches
 }
 
+empty_testdir() {
+  rm -f $TESTDIR/*
+}
+
 get_shm_regions() {
   local regions
 
@@ -35,6 +39,7 @@ output_meta_info() {
 }
 
 run_test() {
+  [ -n "$CREATEFILE" ] && empty_testdir
   drop_cache
   fio --directory=$TESTDIR --runtime=$RUNTIME --iodepth=$IODEPTH --size="$SIZE" --direct=$DIRECT --blocksize="$BLOCKSIZE" --append-terse $1
 }
@@ -55,6 +60,7 @@ Options:
   --size		Total size of file. Default is 4G.
   --direct		If set to 1, use non-buffered I/O. Default is 0.
   --blocksize		Specify blocksize. Default is 4K.
+  -c | --createfile	Setup new file on each run. Remove existing file.
 FOE
 }
 
@@ -69,7 +75,7 @@ if [ $# -lt 3 ];then
 fi
 
 # Parse options
-OPTS=`getopt -o h -l help -l runtime: -l loops: -l iodepth: -l size: -l direct: -l blocksize: -- $@`
+OPTS=`getopt -o h -l help -l runtime: -l loops: -l iodepth: -l size: -l direct: -l blocksize: -o c -l createfile -- $@`
 eval set -- "$OPTS"
 while true; do
   case "$1" in
@@ -80,6 +86,7 @@ while true; do
     --size) SIZE=$2; shift 2;;
     --direct) DIRECT=$2; shift 2;;
     --blocksize) BLOCKSIZE=$2; shift 2;;
+    -c | --createfile) CREATEFILE=1; shift 1;;
     --) shift; break;;
     esac
 done
@@ -93,6 +100,14 @@ TESTDIR=$2
 if [ ! -d "$TESTDIR" ];then
   echo "$TESTDIR is not a valid directory."
   usage $0
+  exit 1
+fi
+
+# If user wants to setup new file for each job and each run, make sure
+# initial directory is empty. We will empty it after each run so that
+# fio is forced to setup new files.
+if [ -n "$CREATEFILE" ] && [ "$(ls -A $TESTDIR)" ];then
+  echo "$TESTDIR is not empty. It needs to be empty with option -c."
   exit 1
 fi
 
