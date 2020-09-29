@@ -34,7 +34,11 @@ div_by_kib() {
   local data=$1
   local total
 
-  total=$(($data/1024))
+  if [ -x "/usr/bin/bc" ]; then
+    total=`echo "scale=1; $data/1024" | bc`
+  else
+    total=$(($data/1024))
+  fi
   echo $total
 }
 
