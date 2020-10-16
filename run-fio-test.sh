@@ -39,9 +39,14 @@ output_meta_info() {
 }
 
 run_test() {
+  local fio_cmd
+
   [ -n "$CREATEFILE" ] && empty_testdir
   drop_cache
-  fio --directory=$TESTDIR --runtime=$RUNTIME --iodepth=$IODEPTH --size="$SIZE" --direct=$DIRECT --blocksize="$BLOCKSIZE" --append-terse $1
+
+  fio_cmd="fio --directory=$TESTDIR --runtime=$RUNTIME --iodepth=$IODEPTH --size="$SIZE" --direct=$DIRECT --blocksize="$BLOCKSIZE" --append-terse $1"
+  echo "Running: $fio_cmd"
+  $fio_cmd
 }
 
 usage() {
