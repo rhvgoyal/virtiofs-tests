@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Defaults
-# default runtime is 30 seconds
-RUNTIME=30
+# default runtime is 20 seconds
+RUNTIME=20
 # Number of times each job is run
 LOOPS=3
 IODEPTH=16
