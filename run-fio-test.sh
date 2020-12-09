@@ -6,7 +6,7 @@ RUNTIME=20
 # Number of times each job is run
 LOOPS=3
 IODEPTH=16
-SIZE="8G"
+SIZE="4G"
 DIRECT=0
 BLOCKSIZE="4K"
 
