@@ -1,0 +1,68 @@
+Methodology
+===========
+I have basically run bunch of fio jobs to get a sense of speed of
+various operations. I wrote a simple wrapper script to run fio jobs
+3 times and take their average and report it. These scripts and fio
+jobs are available here.
+
+https://github.com/rhvgoyal/virtiofs-tests
+
+I have an SSD on host where I setup a test directory and exported that
+directory inside guest using virtiofs and virtio-9p and ran tests inside
+guests in different configurations.
+
+Used caching modes cache=none, cache=auto and cache=always for virtiofs
+and cache=none, cache=mmap and cache=loose for virtio-9p. For virtiofs,
+I also rand all caching test with DAX too to evaluate the impact of DAX.
+
+Test Setup
+-----------
+- A fedora 29 host with 376Gi RAM, 2 sockets (20 cores per socket, 2
+  threads per core)
+
+- Using SSD on host as backing store. 4 fio files of 4G each.
+
+- Created a VM with 32 VCPUS and 64GB memory. Used a 16GB cache window for dax.
+
+- For mounting virtio-9p, I used msize=16MB.
+
+- For guest kernel, I used Miklos's for-next branch of fuse tree. It has
+  killpriv_v2 support patches which should go upstream in 5.11.
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/mszeredi/fuse.git/log/?h=for-next
+
+- For qemu, I used following qemu branch. 
+
+  https://github.com/rhvgoyal/qemu/commits/dax-killpriv-thread-pool
+
+  Bunch of patches like DAX support, killpriv_v2 support, thread-pool-0 support
+  are not upstream yet. So applied these patches on this branch and used
+  for testing.
+
+  Also, carried a patch which improves virtio-9p performance to not use
+  coroutines. Hopefully this will make upstream someday.
+
+virtiofsd command line
+----------------------
+- Used following options for virtiofsd.
+
+./tools/virtiofsd/virtiofsd --socket-path=/tmp/vhostqemu -o source=/mnt/sdb/virtiofs-source -o no_posix_lock -o xattr -o cache=none --thread-pool-size=0 --daemonize
+
+Test Results
+------------
+- Results in nine configurations have been reported.
+  virtio-fs: cache=none, cache=auto, cache=always,
+	     cache=none + DAX, cache=auto + DAX, cache=always + DAX
+  virtio-9p: cache=none, cache=mmap, cache=loose
+
+- Three fio ioengines psync, libaio and mmap have been used.
+
+- I/O Workload of randread, radwrite, seqread and seqwrite have been run.
+
+- Each file size is 4G. Block size 4K. iodepth=16
+
+- "multi" means same operation was done with 4 jobs and each job is
+  operating on a file of size 4G.
+
+- Some results are "0 (KiB/s)". That means that particular operation is
+  not supported in that configuration.
