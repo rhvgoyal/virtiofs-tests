@@ -1,0 +1,68 @@
+Purpose
+=======
+
+Run tests with and without thread pool (per virtuque) and determine the
+performance impact of not using a thread pool.
+
+Methodology
+===========
+I have basically run bunch of fio jobs to get a sense of speed of
+various operations. I wrote a simple wrapper script to run fio jobs
+3 times and take their average and report it. These scripts and fio
+jobs are available here.
+
+https://github.com/rhvgoyal/virtiofs-tests
+
+I have a fast nvme SSD on host where I setup a test directory and exported
+that directory inside guest using virtiofs and ran tests inside guests.
+
+I have used caching mode cache=auto for vitiofs.
+
+Test Setup
+-----------
+- A fedora 29 host with 376Gi RAM, 2 sockets (20 cores per socket, 2
+  threads per core)
+
+- Using SSD on host as backing store. 4 fio files of 4G each.
+
+- Created a VM with 32 VCPUS and 64GB memory.
+
+- Host kernel: 5.11.0-rc6
+- Guest kernel: 5.11.0-rc6
+- Qemu: QEMU emulator version 5.2.50 (v5.2.0-1932-g1214d55d1c-dirty)
+
+virtiofsd command line
+----------------------
+- Used following options for virtiofsd.
+
+./tools/virtiofsd/virtiofsd --socket-path=/tmp/vhostqemu -o source=/mnt/ssd/virtiofs-source -o cache=auto -o xattr --daemonize
+
+Have run test with and without --thread-pool-size=0 option to compare the
+performance when thread pool is used and when its not used.
+
+Test Results
+------------
+- Results in two configurations have been reported.
+
+  default: This is default configuration of virtiofs and it creates thread
+           pool by default with max_threads=64
+
+  no-tpool: This confiugraiton runs with --thread-pool-size=0 to not create
+	    any thread pool.
+
+- Three fio ioengines psync, libaio and mmap have been used.
+
+- I/O Workload of randread, radwrite, randrw (mixed), seqread and seqwrite
+  have been run.
+
+- Each file size is 4G. Block size 4K. iodepth=16
+
+- "multi" means same operation was done with 4 jobs and each job is
+  operating on a file of size 4G.
+
+- Some results might show "0 (KiB/s)". That means that particular operation
+  is not supported in that configuration.
+
+Conclusion
+----------
+- Not using a thread pool seems to perform better with most of the workloads.

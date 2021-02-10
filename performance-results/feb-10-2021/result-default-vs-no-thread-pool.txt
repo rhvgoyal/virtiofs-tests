@@ -1,0 +1,91 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+default                 seqread-psync           625.0mb         156.2k          
+no-tpool                seqread-psync           660.8mb         165.2k          
+
+default                 seqread-psync-multi     2433.7mb        608.4k          
+no-tpool                seqread-psync-multi     2426.1mb        606.5k          
+
+default                 seqread-mmap            662.4mb         165.6k          
+no-tpool                seqread-mmap            682.8mb         170.7k          
+
+default                 seqread-mmap-multi      2535.4mb        633.8k          
+no-tpool                seqread-mmap-multi      2542.7mb        635.6k          
+
+default                 seqread-libaio          315.1mb         78.7k           
+no-tpool                seqread-libaio          280.5mb         70.1k           
+
+default                 seqread-libaio-multi    1473.0mb        368.2k          
+no-tpool                seqread-libaio-multi    1442.6mb        360.6k          
+
+default                 randread-psync          53.2mb          13.3k           
+no-tpool                randread-psync          77.4mb          19.3k           
+
+default                 randread-psync-multi    236.7mb         59.1k           
+no-tpool                randread-psync-multi    326.8mb         81.7k           
+
+default                 randread-mmap           50.5mb          12.6k           
+no-tpool                randread-mmap           64.8mb          16.2k           
+
+default                 randread-mmap-multi     209.3mb         52.3k           
+no-tpool                randread-mmap-multi     287.6mb         71.9k           
+
+default                 randread-libaio         313.0mb         78.2k           
+no-tpool                randread-libaio         301.2mb         75.3k           
+
+default                 randread-libaio-multi   244.6mb         61.1k           
+no-tpool                randread-libaio-multi   291.1mb         72.7k           
+
+default                 seqwrite-psync          29.7mb          7617            
+no-tpool                seqwrite-psync          42.2mb          10.5k           
+
+default                 seqwrite-psync-multi    121.9mb         30.4k           
+no-tpool                seqwrite-psync-multi    172.3mb         43.0k           
+
+default                 seqwrite-mmap           335.7mb         83.9k           
+no-tpool                seqwrite-mmap           340.8mb         85.2k           
+
+default                 seqwrite-mmap-multi     402.3mb         100.5k          
+no-tpool                seqwrite-mmap-multi     415.9mb         103.9k          
+
+default                 seqwrite-libaio         54.1mb          13.5k           
+no-tpool                seqwrite-libaio         78.4mb          19.6k           
+
+default                 seqwrite-libaio-multi   157.9mb         39.4k           
+no-tpool                seqwrite-libaio-multi   226.0mb         56.5k           
+
+default                 randwrite-psync         29.7mb          7609            
+no-tpool                randwrite-psync         44.6mb          11.1k           
+
+default                 randwrite-psync-multi   120.7mb         30.1k           
+no-tpool                randwrite-psync-multi   167.1mb         41.7k           
+
+default                 randwrite-mmap          34.1mb          8732            
+no-tpool                randwrite-mmap          61.0mb          15.2k           
+
+default                 randwrite-mmap-multi    147.6mb         36.9k           
+no-tpool                randwrite-mmap-multi    207.8mb         51.9k           
+
+default                 randwrite-libaio        53.8mb          13.4k           
+no-tpool                randwrite-libaio        83.9mb          20.9k           
+
+default                 randwrite-libaio-multi  156.7mb         39.1k           
+no-tpool                randwrite-libaio-multi  224.5mb         56.1k           
+
+default                 randrw-psync            27.1mb/9270kb   6959/2317       
+no-tpool                randrw-psync            38.7mb/12.9mb   9913/3314       
+
+default                 randrw-psync-multi      111.5mb/37.2mb  27.8k/9548      
+no-tpool                randrw-psync-multi      152.1mb/50.9mb  38.0k/12.7k     
+
+default                 randrw-mmap             25.9mb/8846kb   6644/2211       
+no-tpool                randrw-mmap             51.0mb/17.0mb   12.7k/4377      
+
+default                 randrw-mmap-multi       145.4mb/48.6mb  36.3k/12.1k     
+no-tpool                randrw-mmap-multi       207.3mb/69.4mb  51.8k/17.3k     
+
+default                 randrw-libaio           41.1mb/13.7mb   10.2k/3521      
+no-tpool                randrw-libaio           69.5mb/23.2mb   17.3k/5959      
+
+default                 randrw-libaio-multi     156.8mb/52.5mb  39.2k/13.1k     
+no-tpool                randrw-libaio-multi     211.7mb/70.9mb  52.9k/17.7k     
+
