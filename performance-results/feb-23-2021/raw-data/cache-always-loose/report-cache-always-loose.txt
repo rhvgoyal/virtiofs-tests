@@ -1,0 +1,241 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+9p-loose                seqread-psync           41.1mb          10.2k           
+9p-loose-patched        seqread-psync           90.0mb          22.4k           
+9p-loose-node-patched   seqread-psync           99.5mb          24.8k           
+vtfs-always             seqread-psync           636.1mb         159.0k          
+vtfs-always-node        seqread-psync           657.8mb         164.4k          
+vtfs-always-dax-16G     seqread-psync           695.7mb         173.9k          
+vtfs-always-dax-16G-nodeseqread-psync           749.0mb         187.2k          
+
+9p-loose                seqread-psync-multi     186.8mb         46.7k           
+9p-loose-patched        seqread-psync-multi     340.5mb         85.1k           
+9p-loose-node-patched   seqread-psync-multi     398.7mb         99.6k           
+vtfs-always             seqread-psync-multi     2428.0mb        607.0k          
+vtfs-always-node        seqread-psync-multi     2587.9mb        646.9k          
+vtfs-always-dax-16G     seqread-psync-multi     2474.5mb        618.6k          
+vtfs-always-dax-16G-nodeseqread-psync-multi     2521.2mb        630.3k          
+
+9p-loose                seqread-mmap            48.0mb          12.0k           
+9p-loose-patched        seqread-mmap            87.1mb          21.7k           
+9p-loose-node-patched   seqread-mmap            101.0mb         25.2k           
+vtfs-always             seqread-mmap            694.1mb         173.5k          
+vtfs-always-node        seqread-mmap            692.9mb         173.2k          
+vtfs-always-dax-16G     seqread-mmap            1190.1mb        297.5k          
+vtfs-always-dax-16G-nodeseqread-mmap            1313.6mb        328.4k          
+
+9p-loose                seqread-mmap-multi      190.7mb         47.6k           
+9p-loose-patched        seqread-mmap-multi      357.0mb         89.2k           
+9p-loose-node-patched   seqread-mmap-multi      402.6mb         100.6k          
+vtfs-always             seqread-mmap-multi      2543.2mb        635.8k          
+vtfs-always-node        seqread-mmap-multi      2785.9mb        696.4k          
+vtfs-always-dax-16G     seqread-mmap-multi      4653.7mb        1163.4k         
+vtfs-always-dax-16G-nodeseqread-mmap-multi      4085.6mb        1021.4k         
+
+9p-loose                seqread-libaio          49.7mb          12.4k           
+9p-loose-patched        seqread-libaio          90.4mb          22.6k           
+9p-loose-node-patched   seqread-libaio          98.4mb          24.6k           
+vtfs-always             seqread-libaio          286.7mb         71.6k           
+vtfs-always-node        seqread-libaio          300.9mb         75.2k           
+vtfs-always-dax-16G     seqread-libaio          412.7mb         103.1k          
+vtfs-always-dax-16G-nodeseqread-libaio          415.5mb         103.8k          
+
+9p-loose                seqread-libaio-multi    181.6mb         45.4k           
+9p-loose-patched        seqread-libaio-multi    324.6mb         81.1k           
+9p-loose-node-patched   seqread-libaio-multi    358.0mb         89.5k           
+vtfs-always             seqread-libaio-multi    1454.2mb        363.5k          
+vtfs-always-node        seqread-libaio-multi    1491.9mb        372.9k          
+vtfs-always-dax-16G     seqread-libaio-multi    1486.2mb        371.5k          
+vtfs-always-dax-16G-nodeseqread-libaio-multi    1509.5mb        377.3k          
+
+9p-loose                randread-psync          42.8mb          10.7k           
+9p-loose-patched        randread-psync          84.6mb          21.1k           
+9p-loose-node-patched   randread-psync          93.7mb          23.4k           
+vtfs-always             randread-psync          82.3mb          20.5k           
+vtfs-always-node        randread-psync          82.8mb          20.7k           
+vtfs-always-dax-16G     randread-psync          628.9mb         157.2k          
+vtfs-always-dax-16G-noderandread-psync          666.1mb         166.5k          
+
+9p-loose                randread-psync-multi    180.6mb         45.1k           
+9p-loose-patched        randread-psync-multi    349.3mb         87.3k           
+9p-loose-node-patched   randread-psync-multi    385.9mb         96.4k           
+vtfs-always             randread-psync-multi    308.8mb         77.2k           
+vtfs-always-node        randread-psync-multi    370.8mb         92.7k           
+vtfs-always-dax-16G     randread-psync-multi    473.4mb         118.3k          
+vtfs-always-dax-16G-noderandread-psync-multi    490.5mb         122.6k          
+
+9p-loose                randread-mmap           36.7mb          9395            
+9p-loose-patched        randread-mmap           72.0mb          18.0k           
+9p-loose-node-patched   randread-mmap           80.7mb          20.1k           
+vtfs-always             randread-mmap           61.6mb          15.4k           
+vtfs-always-node        randread-mmap           68.6mb          17.1k           
+vtfs-always-dax-16G     randread-mmap           1068.8mb        267.2k          
+vtfs-always-dax-16G-noderandread-mmap           1178.4mb        294.6k          
+
+9p-loose                randread-mmap-multi     164.5mb         41.1k           
+9p-loose-patched        randread-mmap-multi     292.6mb         73.1k           
+9p-loose-node-patched   randread-mmap-multi     313.8mb         78.4k           
+vtfs-always             randread-mmap-multi     309.5mb         77.3k           
+vtfs-always-node        randread-mmap-multi     314.3mb         78.5k           
+vtfs-always-dax-16G     randread-mmap-multi     1206.8mb        301.7k          
+vtfs-always-dax-16G-noderandread-mmap-multi     1183.6mb        295.9k          
+
+9p-loose                randread-libaio         42.0mb          10.5k           
+9p-loose-patched        randread-libaio         90.5mb          22.6k           
+9p-loose-node-patched   randread-libaio         96.9mb          24.2k           
+vtfs-always             randread-libaio         284.5mb         71.1k           
+vtfs-always-node        randread-libaio         300.5mb         75.1k           
+vtfs-always-dax-16G     randread-libaio         384.0mb         96.0k           
+vtfs-always-dax-16G-noderandread-libaio         400.8mb         100.2k          
+
+9p-loose                randread-libaio-multi   186.3mb         46.5k           
+9p-loose-patched        randread-libaio-multi   339.9mb         84.9k           
+9p-loose-node-patched   randread-libaio-multi   398.8mb         99.7k           
+vtfs-always             randread-libaio-multi   308.2mb         77.0k           
+vtfs-always-node        randread-libaio-multi   344.1mb         86.0k           
+vtfs-always-dax-16G     randread-libaio-multi   344.5mb         86.1k           
+vtfs-always-dax-16G-noderandread-libaio-multi   339.1mb         84.7k           
+
+9p-loose                seqwrite-psync          37.1mb          9514            
+9p-loose-patched        seqwrite-psync          67.6mb          16.9k           
+9p-loose-node-patched   seqwrite-psync          74.1mb          18.5k           
+vtfs-always             seqwrite-psync          72.8mb          18.2k           
+vtfs-always-node        seqwrite-psync          83.5mb          20.8k           
+vtfs-always-dax-16G     seqwrite-psync          498.0mb         124.5k          
+vtfs-always-dax-16G-nodeseqwrite-psync          522.1mb         130.5k          
+
+9p-loose                seqwrite-psync-multi    134.7mb         33.6k           
+9p-loose-patched        seqwrite-psync-multi    285.2mb         71.3k           
+9p-loose-node-patched   seqwrite-psync-multi    347.5mb         86.8k           
+vtfs-always             seqwrite-psync-multi    338.2mb         84.5k           
+vtfs-always-node        seqwrite-psync-multi    362.3mb         90.5k           
+vtfs-always-dax-16G     seqwrite-psync-multi    1314.7mb        328.6k          
+vtfs-always-dax-16G-nodeseqwrite-psync-multi    1265.4mb        316.3k          
+
+9p-loose                seqwrite-mmap           82.6mb          20.6k           
+9p-loose-patched        seqwrite-mmap           142.2mb         35.5k           
+9p-loose-node-patched   seqwrite-mmap           155.9mb         38.9k           
+vtfs-always             seqwrite-mmap           273.8mb         68.4k           
+vtfs-always-node        seqwrite-mmap           287.7mb         71.9k           
+vtfs-always-dax-16G     seqwrite-mmap           1723.6mb        430.9k          
+vtfs-always-dax-16G-nodeseqwrite-mmap           1655.5mb        413.8k          
+
+9p-loose                seqwrite-mmap-multi     179.5mb         44.8k           
+9p-loose-patched        seqwrite-mmap-multi     317.4mb         79.3k           
+9p-loose-node-patched   seqwrite-mmap-multi     353.1mb         88.2k           
+vtfs-always             seqwrite-mmap-multi     388.9mb         97.2k           
+vtfs-always-node        seqwrite-mmap-multi     441.4mb         110.3k          
+vtfs-always-dax-16G     seqwrite-mmap-multi     2215.7mb        553.9k          
+vtfs-always-dax-16G-nodeseqwrite-mmap-multi     2607.0mb        651.7k          
+
+9p-loose                seqwrite-libaio         24.9mb          6384            
+9p-loose-patched        seqwrite-libaio         39.8mb          10203           
+9p-loose-node-patched   seqwrite-libaio         45.6mb          11.4k           
+vtfs-always             seqwrite-libaio         277.7mb         69.4k           
+vtfs-always-node        seqwrite-libaio         272.5mb         68.1k           
+vtfs-always-dax-16G     seqwrite-libaio         312.7mb         78.1k           
+vtfs-always-dax-16G-nodeseqwrite-libaio         310.0mb         77.5k           
+
+9p-loose                seqwrite-libaio-multi   79.4mb          19.8k           
+9p-loose-patched        seqwrite-libaio-multi   153.3mb         38.3k           
+9p-loose-node-patched   seqwrite-libaio-multi   192.2mb         48.0k           
+vtfs-always             seqwrite-libaio-multi   345.8mb         86.4k           
+vtfs-always-node        seqwrite-libaio-multi   429.2mb         107.3k          
+vtfs-always-dax-16G     seqwrite-libaio-multi   1004.9mb        251.2k          
+vtfs-always-dax-16G-nodeseqwrite-libaio-multi   1047.5mb        261.8k          
+
+9p-loose                randwrite-psync         33.6mb          8621            
+9p-loose-patched        randwrite-psync         65.0mb          16.2k           
+9p-loose-node-patched   randwrite-psync         73.0mb          18.2k           
+vtfs-always             randwrite-psync         81.0mb          20.2k           
+vtfs-always-node        randwrite-psync         82.4mb          20.6k           
+vtfs-always-dax-16G     randwrite-psync         435.8mb         108.9k          
+vtfs-always-dax-16G-noderandwrite-psync         486.8mb         121.7k          
+
+9p-loose                randwrite-psync-multi   132.0mb         33.0k           
+9p-loose-patched        randwrite-psync-multi   292.4mb         73.1k           
+9p-loose-node-patched   randwrite-psync-multi   344.5mb         86.1k           
+vtfs-always             randwrite-psync-multi   336.6mb         84.1k           
+vtfs-always-node        randwrite-psync-multi   352.8mb         88.2k           
+vtfs-always-dax-16G     randwrite-psync-multi   525.5mb         131.3k          
+vtfs-always-dax-16G-noderandwrite-psync-multi   508.1mb         127.0k          
+
+9p-loose                randwrite-mmap          42.4mb          10.6k           
+9p-loose-patched        randwrite-mmap          71.9mb          17.9k           
+9p-loose-node-patched   randwrite-mmap          83.0mb          20.7k           
+vtfs-always             randwrite-mmap          71.9mb          17.9k           
+vtfs-always-node        randwrite-mmap          74.2mb          18.5k           
+vtfs-always-dax-16G     randwrite-mmap          793.0mb         198.2k          
+vtfs-always-dax-16G-noderandwrite-mmap          888.5mb         222.1k          
+
+9p-loose                randwrite-mmap-multi    169.6mb         42.4k           
+9p-loose-patched        randwrite-mmap-multi    295.4mb         73.8k           
+9p-loose-node-patched   randwrite-mmap-multi    326.6mb         81.6k           
+vtfs-always             randwrite-mmap-multi    197.6mb         49.4k           
+vtfs-always-node        randwrite-mmap-multi    247.8mb         61.9k           
+vtfs-always-dax-16G     randwrite-mmap-multi    1123.1mb        280.7k          
+vtfs-always-dax-16G-noderandwrite-mmap-multi    1132.2mb        283.0k          
+
+9p-loose                randwrite-libaio        23.2mb          5941            
+9p-loose-patched        randwrite-libaio        39.9mb          10233           
+9p-loose-node-patched   randwrite-libaio        45.3mb          11.3k           
+vtfs-always             randwrite-libaio        258.6mb         64.6k           
+vtfs-always-node        randwrite-libaio        272.9mb         68.2k           
+vtfs-always-dax-16G     randwrite-libaio        302.6mb         75.6k           
+vtfs-always-dax-16G-noderandwrite-libaio        302.4mb         75.6k           
+
+9p-loose                randwrite-libaio-multi  79.8mb          19.9k           
+9p-loose-patched        randwrite-libaio-multi  162.4mb         40.6k           
+9p-loose-node-patched   randwrite-libaio-multi  205.9mb         51.4k           
+vtfs-always             randwrite-libaio-multi  316.2mb         79.0k           
+vtfs-always-node        randwrite-libaio-multi  441.7mb         110.4k          
+vtfs-always-dax-16G     randwrite-libaio-multi  350.9mb         87.7k           
+vtfs-always-dax-16G-noderandwrite-libaio-multi  345.6mb         86.4k           
+
+9p-loose                randrw-psync            27.7mb/9471kb   7103/2367       
+9p-loose-patched        randrw-psync            58.1mb/19.4mb   14.5k/4986      
+9p-loose-node-patched   randrw-psync            64.8mb/21.6mb   16.2k/5551      
+vtfs-always             randrw-psync            38.0mb/12.6mb   9733/3247       
+vtfs-always-node        randrw-psync            40.0mb/13.3mb   10.0k/3422      
+vtfs-always-dax-16G     randrw-psync            434.3mb/145.1mb 108.5k/36.2k    
+vtfs-always-dax-16G-noderandrw-psync            427.7mb/142.9mb 106.9k/35.7k    
+
+9p-loose                randrw-psync-multi      125.9mb/42.1mb  31.4k/10.5k     
+9p-loose-patched        randrw-psync-multi      230.0mb/77.1mb  57.5k/19.2k     
+9p-loose-node-patched   randrw-psync-multi      265.3mb/88.8mb  66.3k/22.2k     
+vtfs-always             randrw-psync-multi      155.0mb/51.9mb  38.7k/12.9k     
+vtfs-always-node        randrw-psync-multi      179.1mb/60.0mb  44.7k/15.0k     
+vtfs-always-dax-16G     randrw-psync-multi      249.0mb/83.4mb  62.2k/20.8k     
+vtfs-always-dax-16G-noderandrw-psync-multi      235.0mb/78.7mb  58.7k/19.6k     
+
+9p-loose                randrw-mmap             30.2mb/10.0mb   7734/2577       
+9p-loose-patched        randrw-mmap             54.4mb/18.2mb   13.6k/4664      
+9p-loose-node-patched   randrw-mmap             60.3mb/20.2mb   15.0k/5172      
+vtfs-always             randrw-mmap             53.6mb/17.9mb   13.4k/4597      
+vtfs-always-node        randrw-mmap             54.0mb/18.1mb   13.5k/4633      
+vtfs-always-dax-16G     randrw-mmap             727.3mb/243.0mb 181.8k/60.7k    
+vtfs-always-dax-16G-noderandrw-mmap             719.1mb/240.3mb 179.7k/60.0k    
+
+9p-loose                randrw-mmap-multi       126.3mb/42.2mb  31.5k/10.5k     
+9p-loose-patched        randrw-mmap-multi       217.7mb/72.9mb  54.4k/18.2k     
+9p-loose-node-patched   randrw-mmap-multi       238.4mb/79.8mb  59.6k/19.9k     
+vtfs-always             randrw-mmap-multi       208.9mb/70.0mb  52.2k/17.5k     
+vtfs-always-node        randrw-mmap-multi       236.8mb/79.3mb  59.2k/19.8k     
+vtfs-always-dax-16G     randrw-mmap-multi       566.0mb/189.3mb 141.5k/47.3k    
+vtfs-always-dax-16G-noderandrw-mmap-multi       566.5mb/189.5mb 141.6k/47.3k    
+
+9p-loose                randrw-libaio           23.9mb/8168kb   6132/2041       
+9p-loose-patched        randrw-libaio           52.6mb/17.6mb   13.1k/4506      
+9p-loose-node-patched   randrw-libaio           56.1mb/18.7mb   14.0k/4810      
+vtfs-always             randrw-libaio           94.9mb/31.7mb   23.7k/8135      
+vtfs-always-node        randrw-libaio           95.2mb/31.8mb   23.8k/8162      
+vtfs-always-dax-16G     randrw-libaio           241.3mb/80.6mb  60.3k/20.1k     
+vtfs-always-dax-16G-noderandrw-libaio           253.9mb/84.8mb  63.4k/21.2k     
+
+9p-loose                randrw-libaio-multi     103.7mb/34.7mb  25.9k/8887      
+9p-loose-patched        randrw-libaio-multi     205.2mb/68.8mb  51.3k/17.2k     
+9p-loose-node-patched   randrw-libaio-multi     231.8mb/77.6mb  57.9k/19.4k     
+vtfs-always             randrw-libaio-multi     223.6mb/74.9mb  55.9k/18.7k     
+vtfs-always-node        randrw-libaio-multi     265.0mb/88.7mb  66.2k/22.1k     
+vtfs-always-dax-16G     randrw-libaio-multi     183.7mb/61.5mb  45.9k/15.3k     
+vtfs-always-dax-16G-noderandrw-libaio-multi     176.8mb/59.2mb  44.2k/14.8k     
+

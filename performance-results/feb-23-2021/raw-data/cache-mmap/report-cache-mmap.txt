@@ -1,0 +1,121 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+9p-mmap                 seqread-psync           57.5mb          14.3k           
+9p-mmap-patched         seqread-psync           113.8mb         28.4k           
+9p-mmap-node-patched    seqread-psync           111.5mb         27.8k           
+
+9p-mmap                 seqread-psync-multi     193.9mb         48.4k           
+9p-mmap-patched         seqread-psync-multi     378.1mb         94.5k           
+9p-mmap-node-patched    seqread-psync-multi     446.1mb         111.5k          
+
+9p-mmap                 seqread-mmap            50.0mb          12.5k           
+9p-mmap-patched         seqread-mmap            99.4mb          24.8k           
+9p-mmap-node-patched    seqread-mmap            101.3mb         25.3k           
+
+9p-mmap                 seqread-mmap-multi      184.9mb         46.2k           
+9p-mmap-patched         seqread-mmap-multi      356.3mb         89.0k           
+9p-mmap-node-patched    seqread-mmap-multi      400.0mb         100.0k          
+
+9p-mmap                 seqread-libaio          47.1mb          11.7k           
+9p-mmap-patched         seqread-libaio          94.3mb          23.5k           
+9p-mmap-node-patched    seqread-libaio          99.9mb          24.9k           
+
+9p-mmap                 seqread-libaio-multi    188.6mb         47.1k           
+9p-mmap-patched         seqread-libaio-multi    346.5mb         86.6k           
+9p-mmap-node-patched    seqread-libaio-multi    404.1mb         101.0k          
+
+9p-mmap                 randread-psync          53.8mb          13.4k           
+9p-mmap-patched         randread-psync          103.9mb         25.9k           
+9p-mmap-node-patched    randread-psync          107.7mb         26.9k           
+
+9p-mmap                 randread-psync-multi    198.9mb         49.7k           
+9p-mmap-patched         randread-psync-multi    390.0mb         97.5k           
+9p-mmap-node-patched    randread-psync-multi    416.0mb         104.0k          
+
+9p-mmap                 randread-mmap           38.9mb          9978            
+9p-mmap-patched         randread-mmap           77.0mb          19.2k           
+9p-mmap-node-patched    randread-mmap           79.5mb          19.8k           
+
+9p-mmap                 randread-mmap-multi     172.9mb         43.2k           
+9p-mmap-patched         randread-mmap-multi     285.1mb         71.2k           
+9p-mmap-node-patched    randread-mmap-multi     312.0mb         78.0k           
+
+9p-mmap                 randread-libaio         53.8mb          13.4k           
+9p-mmap-patched         randread-libaio         95.5mb          23.8k           
+9p-mmap-node-patched    randread-libaio         99.5mb          24.8k           
+
+9p-mmap                 randread-libaio-multi   188.3mb         47.0k           
+9p-mmap-patched         randread-libaio-multi   347.2mb         86.8k           
+9p-mmap-node-patched    randread-libaio-multi   393.7mb         98.4k           
+
+9p-mmap                 seqwrite-psync          49.7mb          12.4k           
+9p-mmap-patched         seqwrite-psync          105.6mb         26.4k           
+9p-mmap-node-patched    seqwrite-psync          103.6mb         25.9k           
+
+9p-mmap                 seqwrite-psync-multi    185.9mb         46.4k           
+9p-mmap-patched         seqwrite-psync-multi    362.4mb         90.6k           
+9p-mmap-node-patched    seqwrite-psync-multi    372.5mb         93.1k           
+
+9p-mmap                 seqwrite-mmap           87.9mb          21.9k           
+9p-mmap-patched         seqwrite-mmap           153.7mb         38.4k           
+9p-mmap-node-patched    seqwrite-mmap           156.4mb         39.0k           
+
+9p-mmap                 seqwrite-mmap-multi     179.1mb         44.7k           
+9p-mmap-patched         seqwrite-mmap-multi     328.6mb         82.1k           
+9p-mmap-node-patched    seqwrite-mmap-multi     352.1mb         88.0k           
+
+9p-mmap                 seqwrite-libaio         50.2mb          12.5k           
+9p-mmap-patched         seqwrite-libaio         91.6mb          22.9k           
+9p-mmap-node-patched    seqwrite-libaio         95.2mb          23.8k           
+
+9p-mmap                 seqwrite-libaio-multi   184.1mb         46.0k           
+9p-mmap-patched         seqwrite-libaio-multi   335.9mb         83.9k           
+9p-mmap-node-patched    seqwrite-libaio-multi   392.7mb         98.1k           
+
+9p-mmap                 randwrite-psync         54.3mb          13.5k           
+9p-mmap-patched         randwrite-psync         90.1mb          22.5k           
+9p-mmap-node-patched    randwrite-psync         103.0mb         25.7k           
+
+9p-mmap                 randwrite-psync-multi   185.5mb         46.3k           
+9p-mmap-patched         randwrite-psync-multi   347.9mb         86.9k           
+9p-mmap-node-patched    randwrite-psync-multi   397.6mb         99.4k           
+
+9p-mmap                 randwrite-mmap          36.0mb          9230            
+9p-mmap-patched         randwrite-mmap          78.1mb          19.5k           
+9p-mmap-node-patched    randwrite-mmap          81.8mb          20.4k           
+
+9p-mmap                 randwrite-mmap-multi    172.6mb         43.1k           
+9p-mmap-patched         randwrite-mmap-multi    300.4mb         75.1k           
+9p-mmap-node-patched    randwrite-mmap-multi    322.1mb         80.5k           
+
+9p-mmap                 randwrite-libaio        46.2mb          11.5k           
+9p-mmap-patched         randwrite-libaio        88.0mb          22.0k           
+9p-mmap-node-patched    randwrite-libaio        95.3mb          23.8k           
+
+9p-mmap                 randwrite-libaio-multi  180.1mb         45.0k           
+9p-mmap-patched         randwrite-libaio-multi  346.7mb         86.6k           
+9p-mmap-node-patched    randwrite-libaio-multi  381.5mb         95.3k           
+
+9p-mmap                 randrw-psync            42.1mb/14.0mb   10.5k/3606      
+9p-mmap-patched         randrw-psync            78.3mb/26.2mb   19.5k/6721      
+9p-mmap-node-patched    randrw-psync            81.3mb/27.2mb   20.3k/6980      
+
+9p-mmap                 randrw-psync-multi      142.9mb/47.8mb  35.7k/11.9k     
+9p-mmap-patched         randrw-psync-multi      284.8mb/95.4mb  71.2k/23.8k     
+9p-mmap-node-patched    randrw-psync-multi      306.9mb/102.8mb 76.7k/25.7k     
+
+9p-mmap                 randrw-mmap             31.0mb/10.3mb   7954/2652       
+9p-mmap-patched         randrw-mmap             55.7mb/18.6mb   13.9k/4774      
+9p-mmap-node-patched    randrw-mmap             60.3mb/20.2mb   15.0k/5173      
+
+9p-mmap                 randrw-mmap-multi       128.4mb/42.9mb  32.1k/10.7k     
+9p-mmap-patched         randrw-mmap-multi       217.0mb/72.7mb  54.2k/18.1k     
+9p-mmap-node-patched    randrw-mmap-multi       235.6mb/78.9mb  58.9k/19.7k     
+
+9p-mmap                 randrw-libaio           36.2mb/12.1mb   9279/3097       
+9p-mmap-patched         randrw-libaio           70.4mb/23.5mb   17.6k/6034      
+9p-mmap-node-patched    randrw-libaio           73.4mb/24.6mb   18.3k/6300      
+
+9p-mmap                 randrw-libaio-multi     141.0mb/47.2mb  35.2k/11.8k     
+9p-mmap-patched         randrw-libaio-multi     263.3mb/88.2mb  65.8k/22.0k     
+9p-mmap-node-patched    randrw-libaio-multi     293.5mb/98.3mb  73.3k/24.5k     
+

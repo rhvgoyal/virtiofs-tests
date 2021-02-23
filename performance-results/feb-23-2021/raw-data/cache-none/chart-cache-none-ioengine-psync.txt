@@ -1,0 +1,19 @@
+9p-none                 seqread-psync           53.9mb          13.4k           
+9p-none-patched         seqread-psync           93.3mb          23.3k           
+vtfs-none               seqread-psync           84.8mb          21.2k           
+vtfs-none-dax-16G       seqread-psync           758.7mb         189.6k          
+
+9p-none                 randread-psync          50.5mb          12.6k           
+9p-none-patched         randread-psync          95.1mb          23.7k           
+vtfs-none               randread-psync          84.5mb          21.1k           
+vtfs-none-dax-16G       randread-psync          627.3mb         156.8k          
+
+9p-none                 seqwrite-psync          42.3mb          10.5k           
+9p-none-patched         seqwrite-psync          92.9mb          23.2k           
+vtfs-none               seqwrite-psync          78.9mb          19.7k           
+vtfs-none-dax-16G       seqwrite-psync          464.8mb         116.2k          
+
+9p-none                 randwrite-psync         46.8mb          11.7k           
+9p-none-patched         randwrite-psync         92.3mb          23.0k           
+vtfs-none               randwrite-psync         77.2mb          19.3k           
+vtfs-none-dax-16G       randwrite-psync         443.4mb         110.8k          

@@ -1,0 +1,151 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+vtfs-auto               seqread-psync           610.0mb         152.5k          
+vtfs-auto-node          seqread-psync           638.7mb         159.6k          
+vtfs-auto-dax-16G       seqread-psync           702.1mb         175.5k          
+vtfs-auto-dax-16G-node  seqread-psync           728.8mb         182.2k          
+
+vtfs-auto               seqread-psync-multi     2472.1mb        618.0k          
+vtfs-auto-node          seqread-psync-multi     2664.8mb        666.2k          
+vtfs-auto-dax-16G       seqread-psync-multi     2429.0mb        607.2k          
+vtfs-auto-dax-16G-node  seqread-psync-multi     2541.1mb        635.2k          
+
+vtfs-auto               seqread-mmap            648.1mb         162.0k          
+vtfs-auto-node          seqread-mmap            692.7mb         173.1k          
+vtfs-auto-dax-16G       seqread-mmap            1213.1mb        303.2k          
+vtfs-auto-dax-16G-node  seqread-mmap            1172.5mb        293.1k          
+
+vtfs-auto               seqread-mmap-multi      2591.1mb        647.7k          
+vtfs-auto-node          seqread-mmap-multi      2773.4mb        693.3k          
+vtfs-auto-dax-16G       seqread-mmap-multi      3846.8mb        961.7k          
+vtfs-auto-dax-16G-node  seqread-mmap-multi      4066.4mb        1016.6k         
+
+vtfs-auto               seqread-libaio          238.8mb         59.7k           
+vtfs-auto-node          seqread-libaio          294.1mb         73.5k           
+vtfs-auto-dax-16G       seqread-libaio          405.2mb         101.3k          
+vtfs-auto-dax-16G-node  seqread-libaio          405.0mb         101.2k          
+
+vtfs-auto               seqread-libaio-multi    1450.1mb        362.5k          
+vtfs-auto-node          seqread-libaio-multi    1462.1mb        365.5k          
+vtfs-auto-dax-16G       seqread-libaio-multi    1471.7mb        367.9k          
+vtfs-auto-dax-16G-node  seqread-libaio-multi    1458.0mb        364.5k          
+
+vtfs-auto               randread-psync          78.4mb          19.6k           
+vtfs-auto-node          randread-psync          83.7mb          20.9k           
+vtfs-auto-dax-16G       randread-psync          686.5mb         171.6k          
+vtfs-auto-dax-16G-node  randread-psync          685.2mb         171.3k          
+
+vtfs-auto               randread-psync-multi    321.0mb         80.2k           
+vtfs-auto-node          randread-psync-multi    368.6mb         92.1k           
+vtfs-auto-dax-16G       randread-psync-multi    511.2mb         127.7k          
+vtfs-auto-dax-16G-node  randread-psync-multi    488.7mb         122.1k          
+
+vtfs-auto               randread-mmap           65.7mb          16.4k           
+vtfs-auto-node          randread-mmap           69.1mb          17.2k           
+vtfs-auto-dax-16G       randread-mmap           1230.6mb        307.6k          
+vtfs-auto-dax-16G-node  randread-mmap           1199.4mb        299.8k          
+
+vtfs-auto               randread-mmap-multi     290.8mb         72.7k           
+vtfs-auto-node          randread-mmap-multi     313.6mb         78.4k           
+vtfs-auto-dax-16G       randread-mmap-multi     1166.4mb        291.6k          
+vtfs-auto-dax-16G-node  randread-mmap-multi     1124.2mb        281.0k          
+
+vtfs-auto               randread-libaio         282.1mb         70.5k           
+vtfs-auto-node          randread-libaio         294.4mb         73.6k           
+vtfs-auto-dax-16G       randread-libaio         404.7mb         101.1k          
+vtfs-auto-dax-16G-node  randread-libaio         400.4mb         100.1k          
+
+vtfs-auto               randread-libaio-multi   323.5mb         80.8k           
+vtfs-auto-node          randread-libaio-multi   346.4mb         86.6k           
+vtfs-auto-dax-16G       randread-libaio-multi   357.1mb         89.2k           
+vtfs-auto-dax-16G-node  randread-libaio-multi   331.7mb         82.9k           
+
+vtfs-auto               seqwrite-psync          70.9mb          17.7k           
+vtfs-auto-node          seqwrite-psync          83.0mb          20.7k           
+vtfs-auto-dax-16G       seqwrite-psync          520.8mb         130.2k          
+vtfs-auto-dax-16G-node  seqwrite-psync          488.6mb         122.1k          
+
+vtfs-auto               seqwrite-psync-multi    307.2mb         76.8k           
+vtfs-auto-node          seqwrite-psync-multi    361.2mb         90.3k           
+vtfs-auto-dax-16G       seqwrite-psync-multi    1385.6mb        346.4k          
+vtfs-auto-dax-16G-node  seqwrite-psync-multi    1485.4mb        371.3k          
+
+vtfs-auto               seqwrite-mmap           326.6mb         81.6k           
+vtfs-auto-node          seqwrite-mmap           350.1mb         87.5k           
+vtfs-auto-dax-16G       seqwrite-mmap           1727.2mb        431.8k          
+vtfs-auto-dax-16G-node  seqwrite-mmap           1919.8mb        479.9k          
+
+vtfs-auto               seqwrite-mmap-multi     401.0mb         100.2k          
+vtfs-auto-node          seqwrite-mmap-multi     430.9mb         107.7k          
+vtfs-auto-dax-16G       seqwrite-mmap-multi     2958.7mb        739.6k          
+vtfs-auto-dax-16G-node  seqwrite-mmap-multi     2818.3mb        704.5k          
+
+vtfs-auto               seqwrite-libaio         214.4mb         53.6k           
+vtfs-auto-node          seqwrite-libaio         272.0mb         68.0k           
+vtfs-auto-dax-16G       seqwrite-libaio         275.5mb         68.8k           
+vtfs-auto-dax-16G-node  seqwrite-libaio         312.0mb         78.0k           
+
+vtfs-auto               seqwrite-libaio-multi   311.0mb         77.7k           
+vtfs-auto-node          seqwrite-libaio-multi   441.6mb         110.4k          
+vtfs-auto-dax-16G       seqwrite-libaio-multi   906.4mb         226.6k          
+vtfs-auto-dax-16G-node  seqwrite-libaio-multi   1000.4mb        250.1k          
+
+vtfs-auto               randwrite-psync         76.6mb          19.1k           
+vtfs-auto-node          randwrite-psync         81.6mb          20.4k           
+vtfs-auto-dax-16G       randwrite-psync         463.5mb         115.8k          
+vtfs-auto-dax-16G-node  randwrite-psync         466.6mb         116.6k          
+
+vtfs-auto               randwrite-psync-multi   301.5mb         75.3k           
+vtfs-auto-node          randwrite-psync-multi   349.4mb         87.3k           
+vtfs-auto-dax-16G       randwrite-psync-multi   486.2mb         121.5k          
+vtfs-auto-dax-16G-node  randwrite-psync-multi   489.8mb         122.4k          
+
+vtfs-auto               randwrite-mmap          70.1mb          17.5k           
+vtfs-auto-node          randwrite-mmap          74.3mb          18.5k           
+vtfs-auto-dax-16G       randwrite-mmap          749.7mb         187.4k          
+vtfs-auto-dax-16G-node  randwrite-mmap          778.9mb         194.7k          
+
+vtfs-auto               randwrite-mmap-multi    236.9mb         59.2k           
+vtfs-auto-node          randwrite-mmap-multi    247.8mb         61.9k           
+vtfs-auto-dax-16G       randwrite-mmap-multi    1032.2mb        258.0k          
+vtfs-auto-dax-16G-node  randwrite-mmap-multi    1105.9mb        276.4k          
+
+vtfs-auto               randwrite-libaio        251.3mb         62.8k           
+vtfs-auto-node          randwrite-libaio        269.4mb         67.3k           
+vtfs-auto-dax-16G       randwrite-libaio        297.0mb         74.2k           
+vtfs-auto-dax-16G-node  randwrite-libaio        275.9mb         68.9k           
+
+vtfs-auto               randwrite-libaio-multi  413.1mb         103.2k          
+vtfs-auto-node          randwrite-libaio-multi  437.7mb         109.4k          
+vtfs-auto-dax-16G       randwrite-libaio-multi  340.1mb         85.0k           
+vtfs-auto-dax-16G-node  randwrite-libaio-multi  342.6mb         85.6k           
+
+vtfs-auto               randrw-psync            37.5mb/12.5mb   9622/3214       
+vtfs-auto-node          randrw-psync            39.7mb/13.2mb   10184/3398      
+vtfs-auto-dax-16G       randrw-psync            447.1mb/149.4mb 111.7k/37.3k    
+vtfs-auto-dax-16G-node  randrw-psync            427.1mb/142.7mb 106.7k/35.6k    
+
+vtfs-auto               randrw-psync-multi      161.8mb/54.1mb  40.4k/13.5k     
+vtfs-auto-node          randrw-psync-multi      177.1mb/59.3mb  44.2k/14.8k     
+vtfs-auto-dax-16G       randrw-psync-multi      232.1mb/77.8mb  58.0k/19.4k     
+vtfs-auto-dax-16G-node  randrw-psync-multi      239.8mb/80.3mb  59.9k/20.0k     
+
+vtfs-auto               randrw-mmap             50.2mb/16.7mb   12.5k/4298      
+vtfs-auto-node          randrw-mmap             54.1mb/18.1mb   13.5k/4636      
+vtfs-auto-dax-16G       randrw-mmap             758.0mb/253.3mb 189.5k/63.3k    
+vtfs-auto-dax-16G-node  randrw-mmap             728.4mb/243.4mb 182.0k/60.8k    
+
+vtfs-auto               randrw-mmap-multi       212.1mb/71.1mb  53.0k/17.7k     
+vtfs-auto-node          randrw-mmap-multi       233.6mb/78.2mb  58.4k/19.5k     
+vtfs-auto-dax-16G       randrw-mmap-multi       561.1mb/187.7mb 140.2k/46.9k    
+vtfs-auto-dax-16G-node  randrw-mmap-multi       511.8mb/171.2mb 127.9k/42.8k    
+
+vtfs-auto               randrw-libaio           86.6mb/29.0mb   21.6k/7436      
+vtfs-auto-node          randrw-libaio           94.7mb/31.7mb   23.6k/8115      
+vtfs-auto-dax-16G       randrw-libaio           261.7mb/87.4mb  65.4k/21.8k     
+vtfs-auto-dax-16G-node  randrw-libaio           259.2mb/86.6mb  64.8k/21.6k     
+
+vtfs-auto               randrw-libaio-multi     244.3mb/81.9mb  61.0k/20.4k     
+vtfs-auto-node          randrw-libaio-multi     258.8mb/86.6mb  64.7k/21.6k     
+vtfs-auto-dax-16G       randrw-libaio-multi     171.2mb/57.3mb  42.8k/14.3k     
+vtfs-auto-dax-16G-node  randrw-libaio-multi     172.2mb/57.6mb  43.0k/14.4k     
+

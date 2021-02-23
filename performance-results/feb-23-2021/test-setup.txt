@@ -1,0 +1,91 @@
+Purpose
+=======
+Run tests in various configurations with 9pfs and virtiofs and compare
+performance resutls.
+
+Methodology
+===========
+I have basically run bunch of fio jobs to get a sense of speed of
+various operations. I wrote a simple wrapper script to run fio jobs
+3 times and take their average and report it. These scripts and fio
+jobs are available here.
+
+https://github.com/rhvgoyal/virtiofs-tests
+
+I have a fast nvme SSD on host where I setup a test directory and exported
+that directory inside guest using virtiofs and ran tests inside guests.
+
+I have used caching mode cache=none, cache=auto and cache=always for vitiofs
+and caching mode cache=none, cache=loose and cache=mmap for 9pfs. For
+virtiofs I also ran tests with and without DAX enabled. I have used a
+dax caching window of 16GB.
+
+Test Setup
+-----------
+- A fedora 29 host with 376Gi RAM, 2 sockets (20 cores per socket, 2
+  threads per core)
+
+- Using SSD on host as backing store. 4 fio files of 4G each.
+
+- Created a VM with 32 VCPUS and 64GB memory.
+
+- Host kernel: 5.11.0
+- Guest kernel: 5.11.0
+
+- Qemu: QEMU emulator version 5.2.50 (v5.2.0-2232-gbc394c887b-dirty)
+
+virtiofsd command line
+----------------------
+- Used following options for virtiofsd.
+
+./tools/virtiofsd/virtiofsd --socket-path=/tmp/vhostqemu -o source=/mnt/ssd/virtiofs-source -o cache=none -o xattr --daemonize
+
+virtiofs qemu configuration
+---------------------------
+-object memory-backend-file,id=mem,size=64G,mem-path=/dev/shm,share=on -numa node,memdev=mem"
+
+-chardev socket,id=char0,path=/tmp/vhostqemu -device vhost-user-fs-pci,chardev=char0,tag=myfs,queue-size=1024,cache-size=16G
+
+9pfs qemu configuration
+-----------------------
+-fsdev local,id=extra1,path=/mnt/nvme-ssd/virtio-9p-dir,security_model=none -device virtio-9p-pci,fsdev=extra1,mount_tag=hostShared
+
+Test Results
+------------
+- Results in nine configurations have been reported.
+
+  virtio-fs: cache=none, cache=auto, cache=always,
+             cache=none + DAX, cache=auto + DAX, cache=always + DAX
+
+  virtio-9p: cache=none, cache=mmap, cache=loose
+
+- There is also data where virtiofsd + qemu were bound to same node using
+  numactl. These files have keyword "node" in them. Similar data has been
+  captured for 9pfs.
+
+- Three fio ioengines psync, libaio and mmap have been used.
+
+- I/O Workload of randread, radwrite, randrw (mixed), seqread and seqwrite
+  have been run.
+
+- Each file size is 4G. Block size 4K. iodepth=16
+
+- "multi" means same operation was done with 4 jobs and each job is
+  operating on a file of size 4G.
+
+- Some results might show "0 (KiB/s)". That means that particular operation
+  is not supported in that configuration.
+
+Conclusion
+----------
+- DAX is way faster in most of the cases as long as cache window is big
+  enough that most of the active data set fits in cache window and
+  very little reclaim is going on.
+
+- virtiofs without DAX is faster than 9pfs (upstream version) in general.
+
+- If 9pfs is patched with an out of tree patch to not use worker threads,
+  then its performance improves a lot. In that case it seems to perform
+  little better than virtiofs for ioengine=psync.
+
+- ioengine=libaio performs better even with patched 9pfs. 

@@ -1,0 +1,19 @@
+9p-none                 seqread-mmap            39.6mb          10151           
+9p-none-patched         seqread-mmap            74.9mb          18.7k           
+vtfs-none               seqread-mmap            0kb             0               
+vtfs-none-dax-16G       seqread-mmap            1363.6mb        340.9k          
+
+9p-none                 randread-mmap           42.0mb          10.5k           
+9p-none-patched         randread-mmap           67.8mb          16.9k           
+vtfs-none               randread-mmap           0kb             0               
+vtfs-none-dax-16G       randread-mmap           1080.5mb        270.1k          
+
+9p-none                 seqwrite-mmap           0kb             0               
+9p-none-patched         seqwrite-mmap           0kb             0               
+vtfs-none               seqwrite-mmap           0kb             0               
+vtfs-none-dax-16G       seqwrite-mmap           1639.4mb        409.8k          
+
+9p-none                 randwrite-mmap          0kb             0               
+9p-none-patched         randwrite-mmap          0kb             0               
+vtfs-none               randwrite-mmap          0kb             0               
+vtfs-none-dax-16G       randwrite-mmap          926.4mb         231.6k          

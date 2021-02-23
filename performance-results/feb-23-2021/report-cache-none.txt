@@ -1,0 +1,151 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+9p-none                 seqread-psync           53.9mb          13.4k           
+9p-none-patched         seqread-psync           93.3mb          23.3k           
+vtfs-none               seqread-psync           84.8mb          21.2k           
+vtfs-none-dax-16G       seqread-psync           758.7mb         189.6k          
+
+9p-none                 seqread-psync-multi     192.1mb         48.0k           
+9p-none-patched         seqread-psync-multi     385.2mb         96.3k           
+vtfs-none               seqread-psync-multi     383.9mb         95.9k           
+vtfs-none-dax-16G       seqread-psync-multi     2195.1mb        548.7k          
+
+9p-none                 seqread-mmap            39.6mb          10151           
+9p-none-patched         seqread-mmap            74.9mb          18.7k           
+vtfs-none               seqread-mmap            0kb             0               
+vtfs-none-dax-16G       seqread-mmap            1363.6mb        340.9k          
+
+9p-none                 seqread-mmap-multi      168.1mb         42.0k           
+9p-none-patched         seqread-mmap-multi      293.6mb         73.4k           
+vtfs-none               seqread-mmap-multi      0kb             0               
+vtfs-none-dax-16G       seqread-mmap-multi      3427.3mb        856.8k          
+
+9p-none                 seqread-libaio          44.1mb          11.0k           
+9p-none-patched         seqread-libaio          92.7mb          23.1k           
+vtfs-none               seqread-libaio          260.4mb         65.1k           
+vtfs-none-dax-16G       seqread-libaio          417.3mb         104.3k          
+
+9p-none                 seqread-libaio-multi    185.0mb         46.2k           
+9p-none-patched         seqread-libaio-multi    351.2mb         87.8k           
+vtfs-none               seqread-libaio-multi    348.7mb         87.1k           
+vtfs-none-dax-16G       seqread-libaio-multi    1344.4mb        336.1k          
+
+9p-none                 randread-psync          50.5mb          12.6k           
+9p-none-patched         randread-psync          95.1mb          23.7k           
+vtfs-none               randread-psync          84.5mb          21.1k           
+vtfs-none-dax-16G       randread-psync          627.3mb         156.8k          
+
+9p-none                 randread-psync-multi    190.3mb         47.5k           
+9p-none-patched         randread-psync-multi    384.9mb         96.2k           
+vtfs-none               randread-psync-multi    396.3mb         99.0k           
+vtfs-none-dax-16G       randread-psync-multi    470.6mb         117.6k          
+
+9p-none                 randread-mmap           42.0mb          10.5k           
+9p-none-patched         randread-mmap           67.8mb          16.9k           
+vtfs-none               randread-mmap           0kb             0               
+vtfs-none-dax-16G       randread-mmap           1080.5mb        270.1k          
+
+9p-none                 randread-mmap-multi     161.4mb         40.3k           
+9p-none-patched         randread-mmap-multi     279.5mb         69.8k           
+vtfs-none               randread-mmap-multi     0kb             0               
+vtfs-none-dax-16G       randread-mmap-multi     1137.1mb        284.2k          
+
+9p-none                 randread-libaio         48.8mb          12.2k           
+9p-none-patched         randread-libaio         81.5mb          20.3k           
+vtfs-none               randread-libaio         272.6mb         68.1k           
+vtfs-none-dax-16G       randread-libaio         393.7mb         98.4k           
+
+9p-none                 randread-libaio-multi   154.1mb         38.5k           
+9p-none-patched         randread-libaio-multi   320.7mb         80.1k           
+vtfs-none               randread-libaio-multi   273.2mb         68.3k           
+vtfs-none-dax-16G       randread-libaio-multi   360.5mb         90.1k           
+
+9p-none                 seqwrite-psync          42.3mb          10.5k           
+9p-none-patched         seqwrite-psync          92.9mb          23.2k           
+vtfs-none               seqwrite-psync          78.9mb          19.7k           
+vtfs-none-dax-16G       seqwrite-psync          464.8mb         116.2k          
+
+9p-none                 seqwrite-psync-multi    184.9mb         46.2k           
+9p-none-patched         seqwrite-psync-multi    366.9mb         91.7k           
+vtfs-none               seqwrite-psync-multi    345.9mb         86.4k           
+vtfs-none-dax-16G       seqwrite-psync-multi    1199.4mb        299.8k          
+
+9p-none                 seqwrite-mmap           0kb             0               
+9p-none-patched         seqwrite-mmap           0kb             0               
+vtfs-none               seqwrite-mmap           0kb             0               
+vtfs-none-dax-16G       seqwrite-mmap           1639.4mb        409.8k          
+
+9p-none                 seqwrite-mmap-multi     0kb             0               
+9p-none-patched         seqwrite-mmap-multi     0kb             0               
+vtfs-none               seqwrite-mmap-multi     0kb             0               
+vtfs-none-dax-16G       seqwrite-mmap-multi     1813.4mb        453.3k          
+
+9p-none                 seqwrite-libaio         42.3mb          10.5k           
+9p-none-patched         seqwrite-libaio         82.3mb          20.5k           
+vtfs-none               seqwrite-libaio         234.3mb         58.5k           
+vtfs-none-dax-16G       seqwrite-libaio         285.2mb         71.3k           
+
+9p-none                 seqwrite-libaio-multi   180.6mb         45.1k           
+9p-none-patched         seqwrite-libaio-multi   338.4mb         84.6k           
+vtfs-none               seqwrite-libaio-multi   305.2mb         76.3k           
+vtfs-none-dax-16G       seqwrite-libaio-multi   950.8mb         237.7k          
+
+9p-none                 randwrite-psync         46.8mb          11.7k           
+9p-none-patched         randwrite-psync         92.3mb          23.0k           
+vtfs-none               randwrite-psync         77.2mb          19.3k           
+vtfs-none-dax-16G       randwrite-psync         443.4mb         110.8k          
+
+9p-none                 randwrite-psync-multi   183.4mb         45.8k           
+9p-none-patched         randwrite-psync-multi   349.9mb         87.4k           
+vtfs-none               randwrite-psync-multi   343.6mb         85.9k           
+vtfs-none-dax-16G       randwrite-psync-multi   513.4mb         128.3k          
+
+9p-none                 randwrite-mmap          0kb             0               
+9p-none-patched         randwrite-mmap          0kb             0               
+vtfs-none               randwrite-mmap          0kb             0               
+vtfs-none-dax-16G       randwrite-mmap          926.4mb         231.6k          
+
+9p-none                 randwrite-mmap-multi    0kb             0               
+9p-none-patched         randwrite-mmap-multi    0kb             0               
+vtfs-none               randwrite-mmap-multi    0kb             0               
+vtfs-none-dax-16G       randwrite-mmap-multi    1113.0mb        278.2k          
+
+9p-none                 randwrite-libaio        45.1mb          11.2k           
+9p-none-patched         randwrite-libaio        82.4mb          20.6k           
+vtfs-none               randwrite-libaio        231.8mb         57.9k           
+vtfs-none-dax-16G       randwrite-libaio        315.0mb         78.7k           
+
+9p-none                 randwrite-libaio-multi  178.5mb         44.6k           
+9p-none-patched         randwrite-libaio-multi  339.9mb         84.9k           
+vtfs-none               randwrite-libaio-multi  303.2mb         75.8k           
+vtfs-none-dax-16G       randwrite-libaio-multi  361.7mb         90.4k           
+
+9p-none                 randrw-psync            39.3mb/13.1mb   10084/3369      
+9p-none-patched         randrw-psync            74.4mb/24.9mb   18.6k/6383      
+vtfs-none               randrw-psync            70.9mb/23.7mb   17.7k/6079      
+vtfs-none-dax-16G       randrw-psync            440.7mb/147.3mb 110.1k/36.8k    
+
+9p-none                 randrw-psync-multi      140.8mb/47.1mb  35.2k/11.7k     
+9p-none-patched         randrw-psync-multi      287.7mb/96.4mb  71.9k/24.1k     
+vtfs-none               randrw-psync-multi      272.6mb/91.3mb  68.1k/22.8k     
+vtfs-none-dax-16G       randrw-psync-multi      224.5mb/75.2mb  56.1k/18.8k     
+
+9p-none                 randrw-mmap             0kb/0kb         0/0             
+9p-none-patched         randrw-mmap             0kb/0kb         0/0             
+vtfs-none               randrw-mmap             0kb/0kb         0/0             
+vtfs-none-dax-16G       randrw-mmap             665.2mb/222.3mb 166.3k/55.5k    
+
+9p-none                 randrw-mmap-multi       0kb/0kb         0/0             
+9p-none-patched         randrw-mmap-multi       0kb/0kb         0/0             
+vtfs-none               randrw-mmap-multi       0kb/0kb         0/0             
+vtfs-none-dax-16G       randrw-mmap-multi       512.8mb/171.5mb 128.2k/42.8k    
+
+9p-none                 randrw-libaio           31.9mb/10.6mb   8175/2727       
+9p-none-patched         randrw-libaio           64.7mb/21.6mb   16.1k/5545      
+vtfs-none               randrw-libaio           185.1mb/61.8mb  46.2k/15.4k     
+vtfs-none-dax-16G       randrw-libaio           241.5mb/80.7mb  60.3k/20.1k     
+
+9p-none                 randrw-libaio-multi     137.0mb/45.8mb  34.2k/11.4k     
+9p-none-patched         randrw-libaio-multi     262.4mb/87.9mb  65.6k/21.9k     
+vtfs-none               randrw-libaio-multi     234.1mb/78.4mb  58.5k/19.6k     
+vtfs-none-dax-16G       randrw-libaio-multi     175.9mb/58.9mb  43.9k/14.7k     
+
