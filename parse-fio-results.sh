@@ -188,21 +188,42 @@ parse_print_ops() {
   done
 }
 
+parse_print_results() {
+  local operation wltype op_write op_mixed
+
+  print_result_header
+  for wl in ${WL[@]}; do
+    for engine in ${ENGINE[@]}; do
+      operation="$wl-$engine"
+      wltype=${WLTYPE[$wl]}
+
+      [ "$wltype" == "write" ] && op_write=1
+      [ "$wltype" == "mixed" ] && op_mixed=1
+
+      parse_print_ops "$operation" "$op_write" "$op_mixed"
+      operation="$wl-$engine-multi"
+      parse_print_ops "$operation" "$op_write" "$op_mixed"
+    done
+  done
+}
+
 #Main script
+# declare associative array to map workload name to type of workload
+declare -A WLTYPE
+WLTYPE=( [seqread]=read [seqwrite]=write [randread]=read [randwrite]=write [randrw]=mixed )
+
+# non-associative array for type of workloads
+declare -a WL
+WL+=( "seqread" "randread" "seqwrite" "randwrite" "randrw" )
+declare -a ENGINE
+ENGINE+=( "psync" "mmap" "libaio" )
+
 if [ $# -lt 1 ];then
   echo "Usage: $0 FILE ..."
   exit 1
 fi
 
 FILES="$@"
-READ_OPERATIONS="seqread-psync seqread-psync-multi seqread-mmap seqread-mmap-multi seqread-libaio seqread-libaio-multi randread-psync randread-psync-multi randread-mmap randread-mmap-multi randread-libaio randread-libaio-multi"
-
-WRITE_OPERATIONS="seqwrite-psync seqwrite-psync-multi seqwrite-mmap seqwrite-mmap-multi seqwrite-libaio seqwrite-libaio-multi randwrite-psync randwrite-psync-multi randwrite-mmap randwrite-mmap-multi randwrite-libaio randwrite-libaio-multi"
-
-RW_OPERATIONS="randrw-psync randrw-psync-multi randrw-mmap randrw-mmap-multi randrw-libaio randrw-libaio-multi"
 
 # Parse and print numbers
-print_result_header
-parse_print_ops "$READ_OPERATIONS"
-parse_print_ops "$WRITE_OPERATIONS" "1"
-parse_print_ops "$RW_OPERATIONS" "0" "1"
+parse_print_results
