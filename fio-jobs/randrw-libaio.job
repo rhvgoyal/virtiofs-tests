@@ -4,6 +4,5 @@ filename=fio-file1
 rw=randrw
 rwmixread=75
 ioengine=libaio
-direct=1
 
 [randrw-libaio]

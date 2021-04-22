@@ -2,7 +2,6 @@
 name=fio-job
 rw=write
 ioengine=libaio
-direct=1
 group_reporting=1
 
 [seqwrite-libaio-multi]

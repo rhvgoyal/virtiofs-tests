@@ -3,7 +3,6 @@ name=fio-job
 rw=randread
 group_reporting=1
 ioengine=libaio
-direct=1
 
 [randread-libaio-multi]
 filename=fio-file1

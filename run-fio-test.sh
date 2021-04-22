@@ -7,7 +7,7 @@ RUNTIME=20
 LOOPS=3
 IODEPTH=16
 SIZE="4G"
-DIRECT=0
+DIRECT=1
 BLOCKSIZE="4K"
 
 drop_cache() {
@@ -63,7 +63,7 @@ Options:
   --loops		Number of times each job is run. Default is 3.
   --iodepth		Number of I/O units to keep in flight. Default is 16.
   --size		Total size of file. Default is 4G.
-  --direct		If set to 1, use non-buffered I/O. Default is 0.
+  --direct		If set to 1, use non-buffered I/O. Default is 1.
   --blocksize		Specify blocksize. Default is 4K.
   -c | --createfile	Setup new file on each run. Remove existing file.
 FOE

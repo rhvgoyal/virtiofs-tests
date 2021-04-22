@@ -4,7 +4,6 @@ rw=randrw
 rwmixread=75
 group_reporting=1
 ioengine=libaio
-direct=1
 
 [randrw-libaio-multi]
 filename=fio-file1

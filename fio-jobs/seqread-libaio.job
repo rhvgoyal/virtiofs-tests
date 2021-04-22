@@ -3,6 +3,5 @@ name=fio-job
 filename=fio-file1
 rw=read
 ioengine=libaio
-direct=1
 
 [seqread-libaio]
