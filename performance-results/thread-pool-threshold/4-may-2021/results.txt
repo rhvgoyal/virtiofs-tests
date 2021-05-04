@@ -1,0 +1,101 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+tpool-0                 seqread-psync           88.0mb          22.0k           
+inline-or-pool-3        seqread-psync           89.7mb          22.4k           
+pool-thresh-3           seqread-psync           88.6mb          22.1k           
+tpool-16                seqread-psync           65.0mb          16.2k           
+
+tpool-0                 seqread-psync-multi     279.0mb         69.7k           
+inline-or-pool-3        seqread-psync-multi     278.5mb         69.6k           
+pool-thresh-3           seqread-psync-multi     280.8mb         70.1k           
+tpool-16                seqread-psync-multi     260.1mb         65.0k           
+
+tpool-0                 seqread-libaio          301.5mb         75.3k           
+inline-or-pool-3        seqread-libaio          362.8mb         90.7k           
+pool-thresh-3           seqread-libaio          374.0mb         93.5k           
+tpool-16                seqread-libaio          327.1mb         81.7k           
+
+tpool-0                 seqread-libaio-multi    298.0mb         74.5k           
+inline-or-pool-3        seqread-libaio-multi    380.4mb         95.1k           
+pool-thresh-3           seqread-libaio-multi    378.6mb         94.6k           
+tpool-16                seqread-libaio-multi    368.3mb         92.0k           
+
+tpool-0                 randread-psync          89.8mb          22.4k           
+inline-or-pool-3        randread-psync          88.2mb          22.0k           
+pool-thresh-3           randread-psync          89.2mb          22.3k           
+tpool-16                randread-psync          62.8mb          15.7k           
+
+tpool-0                 randread-psync-multi    274.9mb         68.7k           
+inline-or-pool-3        randread-psync-multi    282.3mb         70.5k           
+pool-thresh-3           randread-psync-multi    280.2mb         70.0k           
+tpool-16                randread-psync-multi    243.1mb         60.7k           
+
+tpool-0                 randread-libaio         299.1mb         74.7k           
+inline-or-pool-3        randread-libaio         364.0mb         91.0k           
+pool-thresh-3           randread-libaio         376.5mb         94.1k           
+tpool-16                randread-libaio         323.6mb         80.9k           
+
+tpool-0                 randread-libaio-multi   284.2mb         71.0k           
+inline-or-pool-3        randread-libaio-multi   381.5mb         95.3k           
+pool-thresh-3           randread-libaio-multi   382.4mb         95.6k           
+tpool-16                randread-libaio-multi   363.1mb         90.7k           
+
+tpool-0                 seqwrite-psync          89.7mb          22.4k           
+inline-or-pool-3        seqwrite-psync          84.9mb          21.2k           
+pool-thresh-3           seqwrite-psync          87.6mb          21.9k           
+tpool-16                seqwrite-psync          63.9mb          15.9k           
+
+tpool-0                 seqwrite-psync-multi    258.9mb         64.7k           
+inline-or-pool-3        seqwrite-psync-multi    264.0mb         66.0k           
+pool-thresh-3           seqwrite-psync-multi    264.7mb         66.1k           
+tpool-16                seqwrite-psync-multi    261.0mb         65.2k           
+
+tpool-0                 seqwrite-libaio         284.0mb         71.0k           
+inline-or-pool-3        seqwrite-libaio         334.3mb         83.5k           
+pool-thresh-3           seqwrite-libaio         351.6mb         87.9k           
+tpool-16                seqwrite-libaio         293.6mb         73.4k           
+
+tpool-0                 seqwrite-libaio-multi   279.0mb         69.7k           
+inline-or-pool-3        seqwrite-libaio-multi   417.2mb         104.3k          
+pool-thresh-3           seqwrite-libaio-multi   401.6mb         100.4k          
+tpool-16                seqwrite-libaio-multi   441.4mb         110.3k          
+
+tpool-0                 randwrite-psync         87.7mb          21.9k           
+inline-or-pool-3        randwrite-psync         87.0mb          21.7k           
+pool-thresh-3           randwrite-psync         86.4mb          21.6k           
+tpool-16                randwrite-psync         64.0mb          16.0k           
+
+tpool-0                 randwrite-psync-multi   256.7mb         64.1k           
+inline-or-pool-3        randwrite-psync-multi   263.8mb         65.9k           
+pool-thresh-3           randwrite-psync-multi   258.4mb         64.6k           
+tpool-16                randwrite-psync-multi   287.0mb         71.7k           
+
+tpool-0                 randwrite-libaio        278.6mb         69.6k           
+inline-or-pool-3        randwrite-libaio        329.2mb         82.3k           
+pool-thresh-3           randwrite-libaio        345.3mb         86.3k           
+tpool-16                randwrite-libaio        289.9mb         72.4k           
+
+tpool-0                 randwrite-libaio-multi  267.7mb         66.9k           
+inline-or-pool-3        randwrite-libaio-multi  416.3mb         104.0k          
+pool-thresh-3           randwrite-libaio-multi  400.5mb         100.1k          
+tpool-16                randwrite-libaio-multi  440.6mb         110.1k          
+
+tpool-0                 randrw-psync            54.4mb/18.2mb   13.6k/4668      
+inline-or-pool-3        randrw-psync            53.2mb/17.8mb   13.3k/4563      
+pool-thresh-3           randrw-psync            52.7mb/17.6mb   13.1k/4516      
+tpool-16                randrw-psync            37.1mb/12.4mb   9511/3177       
+
+tpool-0                 randrw-psync-multi      165.0mb/55.2mb  41.2k/13.8k     
+inline-or-pool-3        randrw-psync-multi      166.9mb/55.9mb  41.7k/13.9k     
+pool-thresh-3           randrw-psync-multi      168.5mb/56.4mb  42.1k/14.1k     
+tpool-16                randrw-psync-multi      151.0mb/50.5mb  37.7k/12.6k     
+
+tpool-0                 randrw-libaio           82.7mb/27.7mb   20.6k/7102      
+inline-or-pool-3        randrw-libaio           82.5mb/27.6mb   20.6k/7077      
+pool-thresh-3           randrw-libaio           82.4mb/27.6mb   20.6k/7070      
+tpool-16                randrw-libaio           82.0mb/27.4mb   20.5k/7035      
+
+tpool-0                 randrw-libaio-multi     186.2mb/62.3mb  46.5k/15.5k     
+inline-or-pool-3        randrw-libaio-multi     216.5mb/72.5mb  54.1k/18.1k     
+pool-thresh-3           randrw-libaio-multi     213.6mb/71.6mb  53.4k/17.9k     
+tpool-16                randrw-libaio-multi     256.3mb/85.8mb  64.0k/21.4k     
+
