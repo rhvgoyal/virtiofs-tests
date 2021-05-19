@@ -1,0 +1,61 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+lifo                    seqread-psync           90.7mb          22.6k           
+fifo                    seqread-psync           90.4mb          22.6k           
+
+lifo                    seqread-psync-multi     279.0mb         69.7k           
+fifo                    seqread-psync-multi     269.6mb         67.4k           
+
+lifo                    seqread-libaio          295.5mb         73.8k           
+fifo                    seqread-libaio          297.0mb         74.2k           
+
+lifo                    seqread-libaio-multi    287.6mb         71.9k           
+fifo                    seqread-libaio-multi    291.0mb         72.7k           
+
+lifo                    randread-psync          89.4mb          22.3k           
+fifo                    randread-psync          88.0mb          22.0k           
+
+lifo                    randread-psync-multi    266.7mb         66.6k           
+fifo                    randread-psync-multi    281.4mb         70.3k           
+
+lifo                    randread-libaio         298.1mb         74.5k           
+fifo                    randread-libaio         293.8mb         73.4k           
+
+lifo                    randread-libaio-multi   297.5mb         74.3k           
+fifo                    randread-libaio-multi   298.1mb         74.5k           
+
+lifo                    seqwrite-psync          88.6mb          22.1k           
+fifo                    seqwrite-psync          85.7mb          21.4k           
+
+lifo                    seqwrite-psync-multi    266.5mb         66.6k           
+fifo                    seqwrite-psync-multi    266.3mb         66.5k           
+
+lifo                    seqwrite-libaio         284.6mb         71.1k           
+fifo                    seqwrite-libaio         276.8mb         69.2k           
+
+lifo                    seqwrite-libaio-multi   281.6mb         70.4k           
+fifo                    seqwrite-libaio-multi   277.7mb         69.4k           
+
+lifo                    randwrite-psync         87.1mb          21.7k           
+fifo                    randwrite-psync         86.6mb          21.6k           
+
+lifo                    randwrite-psync-multi   258.1mb         64.5k           
+fifo                    randwrite-psync-multi   259.3mb         64.8k           
+
+lifo                    randwrite-libaio        284.7mb         71.1k           
+fifo                    randwrite-libaio        284.8mb         71.2k           
+
+lifo                    randwrite-libaio-multi  273.7mb         68.4k           
+fifo                    randwrite-libaio-multi  277.6mb         69.4k           
+
+lifo                    randrw-psync            53.3mb/17.8mb   13.3k/4573      
+fifo                    randrw-psync            53.5mb/17.9mb   13.3k/4586      
+
+lifo                    randrw-psync-multi      157.8mb/52.8mb  39.4k/13.2k     
+fifo                    randrw-psync-multi      165.2mb/55.3mb  41.3k/13.8k     
+
+lifo                    randrw-libaio           88.4mb/29.6mb   22.1k/7584      
+fifo                    randrw-libaio           81.4mb/27.3mb   20.3k/6988      
+
+lifo                    randrw-libaio-multi     186.4mb/62.4mb  46.6k/15.6k     
+fifo                    randrw-libaio-multi     186.3mb/62.4mb  46.5k/15.6k     
+
