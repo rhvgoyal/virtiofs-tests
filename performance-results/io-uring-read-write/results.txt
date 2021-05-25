@@ -1,0 +1,81 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+tpool-0                 seqread-psync           90.5mb          22.6k           
+tpool-16-threshold      seqread-psync           89.0mb          22.2k           
+io-uring                seqread-psync           90.5mb          22.6k           
+
+tpool-0                 seqread-psync-multi     274.6mb         68.6k           
+tpool-16-threshold      seqread-psync-multi     280.0mb         70.0k           
+io-uring                seqread-psync-multi     302.7mb         75.6k           
+
+tpool-0                 seqread-libaio          299.2mb         74.8k           
+tpool-16-threshold      seqread-libaio          367.9mb         91.9k           
+io-uring                seqread-libaio          365.9mb         91.4k           
+
+tpool-0                 seqread-libaio-multi    294.9mb         73.7k           
+tpool-16-threshold      seqread-libaio-multi    380.8mb         95.2k           
+io-uring                seqread-libaio-multi    413.8mb         103.4k          
+
+tpool-0                 randread-psync          87.1mb          21.7k           
+tpool-16-threshold      randread-psync          89.8mb          22.4k           
+io-uring                randread-psync          87.5mb          21.8k           
+
+tpool-0                 randread-psync-multi    275.2mb         68.8k           
+tpool-16-threshold      randread-psync-multi    281.6mb         70.4k           
+io-uring                randread-psync-multi    292.6mb         73.1k           
+
+tpool-0                 randread-libaio         295.9mb         73.9k           
+tpool-16-threshold      randread-libaio         364.0mb         91.0k           
+io-uring                randread-libaio         366.1mb         91.5k           
+
+tpool-0                 randread-libaio-multi   280.3mb         70.0k           
+tpool-16-threshold      randread-libaio-multi   374.5mb         93.6k           
+io-uring                randread-libaio-multi   404.9mb         101.2k          
+
+tpool-0                 seqwrite-psync          87.7mb          21.9k           
+tpool-16-threshold      seqwrite-psync          86.5mb          21.6k           
+io-uring                seqwrite-psync          88.3mb          22.0k           
+
+tpool-0                 seqwrite-psync-multi    259.8mb         64.9k           
+tpool-16-threshold      seqwrite-psync-multi    252.0mb         63.0k           
+io-uring                seqwrite-psync-multi    274.1mb         68.5k           
+
+tpool-0                 seqwrite-libaio         283.2mb         70.8k           
+tpool-16-threshold      seqwrite-libaio         330.4mb         82.6k           
+io-uring                seqwrite-libaio         356.5mb         89.1k           
+
+tpool-0                 seqwrite-libaio-multi   270.5mb         67.6k           
+tpool-16-threshold      seqwrite-libaio-multi   393.0mb         98.2k           
+io-uring                seqwrite-libaio-multi   487.5mb         121.8k          
+
+tpool-0                 randwrite-psync         86.4mb          21.6k           
+tpool-16-threshold      randwrite-psync         87.1mb          21.7k           
+io-uring                randwrite-psync         86.3mb          21.5k           
+
+tpool-0                 randwrite-psync-multi   253.1mb         63.2k           
+tpool-16-threshold      randwrite-psync-multi   260.1mb         65.0k           
+io-uring                randwrite-psync-multi   280.5mb         70.1k           
+
+tpool-0                 randwrite-libaio        276.0mb         69.0k           
+tpool-16-threshold      randwrite-libaio        324.1mb         81.0k           
+io-uring                randwrite-libaio        341.2mb         85.3k           
+
+tpool-0                 randwrite-libaio-multi  265.4mb         66.3k           
+tpool-16-threshold      randwrite-libaio-multi  394.2mb         98.5k           
+io-uring                randwrite-libaio-multi  493.5mb         123.3k          
+
+tpool-0                 randrw-psync            53.8mb/18.0mb   13.4k/4619      
+tpool-16-threshold      randrw-psync            52.7mb/17.6mb   13.1k/4520      
+io-uring                randrw-psync            53.3mb/17.8mb   13.3k/4568      
+
+tpool-0                 randrw-psync-multi      164.8mb/55.2mb  41.2k/13.8k     
+tpool-16-threshold      randrw-psync-multi      167.4mb/56.0mb  41.8k/14.0k     
+io-uring                randrw-psync-multi      163.6mb/54.7mb  40.9k/13.6k     
+
+tpool-0                 randrw-libaio           80.9mb/27.1mb   20.2k/6945      
+tpool-16-threshold      randrw-libaio           80.8mb/27.1mb   20.2k/6939      
+io-uring                randrw-libaio           88.0mb/29.5mb   22.0k/7557      
+
+tpool-0                 randrw-libaio-multi     179.5mb/60.1mb  44.8k/15.0k     
+tpool-16-threshold      randrw-libaio-multi     204.2mb/68.4mb  51.0k/17.1k     
+io-uring                randrw-libaio-multi     278.9mb/93.4mb  69.7k/23.3k     
+
