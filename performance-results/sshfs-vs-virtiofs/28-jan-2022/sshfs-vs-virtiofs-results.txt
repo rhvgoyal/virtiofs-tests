@@ -1,0 +1,91 @@
+NAME                    WORKLOAD                Bandwidth       IOPS            
+sshfs                   seqread-psync           1886kb          471             
+virtiofs                seqread-psync           92.7mb          23.1k           
+
+sshfs                   seqread-psync-multi     33.7mb          8647            
+virtiofs                seqread-psync-multi     335.2mb         83.8k           
+
+sshfs                   seqread-mmap            217.9mb         54.4k           
+virtiofs                seqread-mmap            547.2mb         136.8k          
+
+sshfs                   seqread-mmap-multi      310.5mb         77.6k           
+virtiofs                seqread-mmap-multi      2018.1mb        504.5k          
+
+sshfs                   seqread-libaio          99.2mb          24.8k           
+virtiofs                seqread-libaio          283.3mb         70.8k           
+
+sshfs                   seqread-libaio-multi    97.3mb          24.3k           
+virtiofs                seqread-libaio-multi    339.0mb         84.7k           
+
+sshfs                   randread-psync          1850kb          462             
+virtiofs                randread-psync          92.5mb          23.1k           
+
+sshfs                   randread-psync-multi    33.3mb          8546            
+virtiofs                randread-psync-multi    329.7mb         82.4k           
+
+sshfs                   randread-mmap           1923kb          480             
+virtiofs                randread-mmap           67.9mb          16.9k           
+
+sshfs                   randread-mmap-multi     29.6mb          7602            
+virtiofs                randread-mmap-multi     305.7mb         76.4k           
+
+sshfs                   randread-libaio         98.0mb          24.5k           
+virtiofs                randread-libaio         287.2mb         71.8k           
+
+sshfs                   randread-libaio-multi   94.9mb          23.7k           
+virtiofs                randread-libaio-multi   330.6mb         82.6k           
+
+sshfs                   seqwrite-psync          14.2mb          3658            
+virtiofs                seqwrite-psync          50.5mb          12.6k           
+
+sshfs                   seqwrite-psync-multi    161.7mb         40.4k           
+virtiofs                seqwrite-psync-multi    203.2mb         50.8k           
+
+sshfs                   seqwrite-mmap           1271kb          317             
+virtiofs                seqwrite-mmap           30.9mb          7934            
+
+sshfs                   seqwrite-mmap-multi     15.3mb          3937            
+virtiofs                seqwrite-mmap-multi     131.1mb         32.7k           
+
+sshfs                   seqwrite-libaio         78.2mb          19.5k           
+virtiofs                seqwrite-libaio         87.7mb          21.9k           
+
+sshfs                   seqwrite-libaio-multi   134.9mb         33.7k           
+virtiofs                seqwrite-libaio-multi   268.3mb         67.0k           
+
+sshfs                   randwrite-psync         15.4mb          3960            
+virtiofs                randwrite-psync         50.5mb          12.6k           
+
+sshfs                   randwrite-psync-multi   156.2mb         39.0k           
+virtiofs                randwrite-psync-multi   203.8mb         50.9k           
+
+sshfs                   randwrite-mmap          643kb           160             
+virtiofs                randwrite-mmap          23.5mb          6025            
+
+sshfs                   randwrite-mmap-multi    10.2mb          2631            
+virtiofs                randwrite-mmap-multi    96.9mb          24.2k           
+
+sshfs                   randwrite-libaio        80.5mb          20.1k           
+virtiofs                randwrite-libaio        87.2mb          21.8k           
+
+sshfs                   randwrite-libaio-multi  69.3mb          17.3k           
+virtiofs                randwrite-libaio-multi  267.2mb         66.8k           
+
+sshfs                   randrw-psync            1556kb/519kb    389/129         
+virtiofs                randrw-psync            50.4mb/16.8mb   12.6k/4315      
+
+sshfs                   randrw-psync-multi      24.5mb/8433kb   6283/2108       
+virtiofs                randrw-psync-multi      191.0mb/63.9mb  47.7k/15.9k     
+
+sshfs                   randrw-mmap             629kb/218kb     157/54          
+virtiofs                randrw-mmap             26.8mb/9175kb   6883/2293       
+
+sshfs                   randrw-mmap-multi       10.5mb/3640kb   2692/909        
+virtiofs                randrw-mmap-multi       107.9mb/36.1mb  26.9k/9244      
+
+sshfs                   randrw-libaio           19.8mb/6776kb   5085/1694       
+virtiofs                randrw-libaio           69.5mb/23.2mb   17.3k/5961      
+
+sshfs                   randrw-libaio-multi     27.5mb/9480kb   7064/2370       
+virtiofs                randrw-libaio-multi     247.1mb/82.8mb  61.7k/20.7k     
+
